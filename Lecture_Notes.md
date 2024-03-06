@@ -325,10 +325,10 @@ schemaPeople.groupBy("age").count().orderBy("age").show()
 spark.stop()
 ```
 
-===========
-Lecture #26
-===========
+***
 
+## Lecture #26
+```
 from pyspark.sql import SparkSession
 
 spark = SparkSession.builder.appName("SparkSQL").getOrCreate()
@@ -352,11 +352,11 @@ print("Make everyone 10 years older:")
 people.select(people.name, people.age + 10).show()
 
 spark.stop()
+```
+***
 
-===========
-Lecture #28
-===========
-
+## Lecture #28
+```
 from pyspark.sql import SparkSession
 from pyspark.sql import Row
 from pyspark.sql import functions as func
@@ -381,11 +381,10 @@ print("Make everyone 10 years older:")
 friendsByAge.groupBy("age").agg(func.round(func.avg("friends"), 2).alias("friends_avg")).sort("age").show()
 
 spark.stop()
+```
 
-===========
-Lecture #30
-===========
-
+## Lecture #30
+```
 from pyspark.sql import SparkSession
 from pyspark.sql import functions as func
 from pyspark.sql.types import StructType, StructField, StringType, IntegerType, FloatType
@@ -425,11 +424,11 @@ for result in results:
    print(result[0] + "\t{:.2f}F".format(result[1]))
 
 spark.stop()
+```
+***
 
-===========
-Lecture #32
-===========
-
+## Lecture #32
+```
 from pyspark.sql import SparkSession
 from pyspark.sql import functions as func
 from pyspark.sql.types import StructType, StructField, IntegerType, FloatType 
@@ -453,17 +452,13 @@ totalByCustomerSorted = totalByCustomer.sort("total_spent")
 totalByCustomerSorted.show(totalByCustomerSorted.count())
 
 spark.stop()
+```
+***
 
+# Section 4: Advanced Examples of Spark Programs
 
-
-##############################################
-Section 4: Advanced Examples of Spark Programs
-##############################################
-
-===========
-Lecture #33
-===========
-
+## Lecture #33
+```
 from pyspark.sql import SparkSession
 from pyspark.sql import functions as func
 from pyspark.sql.types import StructType, StructField, IntegerType, LongType
@@ -488,7 +483,7 @@ topMovieIDs.show(10)
 
 # Stop the session
 spark.stop()
-
+```
 
 ***
 
