@@ -41,22 +41,22 @@ for key, value in sortedResults.items():
 
 ## Lecture #9
 
-Deprecate
----------
-Deprecate Python2 --> Python3
-Deprecate old MLLib (based on rdd interface) -> Data Frame / Data Set based
+### Deprecate
 
-Faster & Better Performance
----------------------------
-Spark3 is 17 times faster than Spark2 
--- i) Adaptive execution, 
--- ii) dynamic-partition pruning
+* Deprecate Python2 --> Python3
+* Deprecate old MLLib (based on rdd interface) -> Data Frame / Data Set based
 
-Better kubernetes integration (dynamic scaling)
-Deep Learning: Take advantage of GPUs clusters MLSpark / TensorFlow
-SparkGraph: Cypher query language (property graph model)
-Data Lake ACID support Delta Lake
-Binary File support
+### Faster & Better Performance
+
+* Spark3 is 17 times faster than Spark2
+	* i) Adaptive execution,
+	* ii) dynamic-partition pruning
+
+* Better kubernetes integration (dynamic scaling)
+* Deep Learning: Take advantage of GPUs clusters MLSpark / TensorFlow
+* SparkGraph: Cypher query language (property graph model)
+* Data Lake ACID support Delta Lake
+* Binary File support
 
 ***
 
@@ -65,20 +65,21 @@ Binary File support
 ***
 
 ## Lecture #11
-
 * RDD: Resilient Distributed "Dataset" object
 * Developer uses RDD object for data manipulation
 
 * The Spark shell creates a "sc" SparkContext object for you
--- sc = SparkContext(conf = conf)
+```
+sc = SparkContext(conf = conf)
+```
 
-RDD operations:
--- map
--- flatmap: multiple results per original entry
--- filter
--- distinct
--- sample
--- union, intersection, subtract, cartesian
+### RDD operations
+1. map
+2. flatmap: multiple results per original entry
+3. filter
+4. distinct
+5. sample
+6. union, intersection, subtract, cartesian
 
 ### MAP Example:
 ```
@@ -94,41 +95,41 @@ rdd.map(squareIt)
 ```
 
 ### Actions on RDD
--- collect
--- count
--- countByValue (break down by unique value)
--- take
--- top
--- reduce (key, value based summation)
--- and more
+1. collect
+2. count
+3. countByValue (break down by unique value)
+4. take
+5. top
+6. reduce (key, value based summation)
+7. and more
 
-Lazy Evaluation!!!
+* Lazy Evaluation!!!
 
 ***
 
 ## Lecture #13
 
 * We can put complex structures like (key, value) pairs inside RDD. Then we can treat it like a simple DB.
-key / value RDDs
 
--- reduceByKey()
--- GroupByKey()
--- sortByKey()
--- keys()
--- values()
+### key / value RDDs
+1. reduceByKey()
+2. GroupByKey()
+3. sortByKey()
+4. keys()
+5. values()
 
--- join()
--- rightOuterJoin()
--- leftOuterJoin()
--- cogroup()
--- subtractByKey()
+1. join()
+2. rightOuterJoin()
+3. leftOuterJoin()
+4. cogroup()
+5. subtractByKey()
 
-mapValues() / flatMapValues() -- if your transformation doesn't affect the keys.
+* mapValues() / flatMapValues() -- if your transformation doesn't affect the keys.
 
-===========
-Lecture #14
-===========
+***
 
+## Lecture #14
+```
 from pyspark import SparkConf, SparkContext
 
 conf = SparkConf().setMaster("local").setAppName("FriendsByAge")
@@ -147,11 +148,12 @@ averageByAge = totalByAge.mapValues(lambda x: x[0] / x[1])
 results = averageByAge.collect()
 for result in results:
    print(result)
+```
 
-===========
-Lecture #15
-===========
+*** 
 
+## Lecture #15
+```
 from pyspark import SparkConf, SparkContext
 
 conf = SparkConf().setMaster("local").setAppName("MinTemperatures")
@@ -173,11 +175,12 @@ results = minTemps.collect()
 
 for result in results:
    print(result[0] + "\t{:.2f}F".format(result[1]))
+```
 
-==========
-Lecture #17
-===========
+***
 
+## Lecture #17
+```
 from pyspark import SparkConf, SparkContext
 
 conf = SparkConf().setMaster("local").setAppName("MaxTemperatures")
@@ -199,13 +202,15 @@ results = maxTemps.collect()
 
 for result in results:
    print(result[0] + "\t{:.2f}F".format(result[1]))
+```
 
-===========
-Lecture #18
-===========
+***
 
-MAP (1-1 RDD) vs flatMAP (1-many RDD)
+## Lecture #18
 
+* MAP (1-1 RDD) vs flatMAP (1-many RDD)
+
+```
 from pyspark import SparkConf, SparkContext
 
 conf = SparkConf().setMaster("local").setAppName("WordCount")
@@ -219,11 +224,12 @@ for word, count in wordCounts.items():
    cleanWord = word.encode('ascii', 'ignore')
    if (cleanWord):
       print(cleanWord.decode() + " " + str(count))
+```
 
-===========
-Lecture #20
-===========
+***
 
+## Lecture #20
+```
 import re
 from pyspark import SparkConf, SparkContext
 
@@ -245,12 +251,12 @@ for result in results:
    word = result[1].encode('ascii', 'ignore')
    if (word):
       print(word.decode() + ":\t\t" + count)
+```
 
+***
 
-===========
-Lecture #22
-===========
-
+## Lecture #22
+```
 from pyspark import SparkConf, SparkContext
 
 conf = SparkConf().setMaster("local").setAppName("SpendByCustomer")
@@ -267,27 +273,27 @@ totalByCustomer = mappedInput.reduceByKey(lambda x, y: x + y)
 results = totalByCustomer.collect()
 for result in results:
    print(result)
+```
 
-#############################################
-Section 3: SparkSQL, DataFrames, and DataSets
-#############################################
+***
 
-RDD -> DataFrame Object
+# Section 3: SparkSQL, DataFrames, and DataSets
 
-DataFrames (like Big Database table):
--- Contain ROW objets
--- Can run SQL queries
--- Can have a schema
--- Read / Write to JSON, Hive, parquet, ...
--- Communicate with JDBC / ODBC, Tableau...
+* RDD -> DataFrame Object
 
+* DataFrames (like Big Database table):
+	* Contain ROW objets
+	* Can run SQL queries
+	* Can have a schema
+	* Read / Write to JSON, Hive, parquet, ...
+	* Communicate with JDBC / ODBC, Tableau...
 
-SparkSession vs SparkContext
+* SparkSession vs SparkContext
 
------------
-Lecture #25
------------
+***
 
+## Lecture #25
+```
 from pyspark.sql import SparkSession
 from pyspark.sql import Row
 
@@ -317,7 +323,7 @@ for teen in teenagers.collect():
 schemaPeople.groupBy("age").count().orderBy("age").show()
 
 spark.stop()
-
+```
 
 ===========
 Lecture #26
