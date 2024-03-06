@@ -484,20 +484,16 @@ topMovieIDs.show(10)
 spark.stop()
 
 
+***
 
-===========
-Lecture #34
-===========
+## Lecture #34
 
-Join: Attach movieNames with movieIDs
+* Join: Attach movieNames with movieIDs
+* Dictionary loaded in driver program
+* Broadcast the object and retrieve dictionary from it!
+* UDFs
 
-Dictionary loaded in driver program
-
-Broadcast the object and retrieve dictionary from it!
-
-UDFs
-
-
+```
 from pyspark.sql import SparkSession
 from pyspark.sql import functions as func
 from pyspark.sql.types import StructType, StructField, IntegerType, LongType
@@ -545,12 +541,12 @@ sortedMoviesWithNames.show(10, False)
 
 # Stop the session
 spark.stop()
+```
 
+***
 
-===========
-Lecture #35
-===========
-
+## Lecture #35
+```
 from pyspark.sql import SparkSession
 from pyspark.sql import functions as func
 from pyspark.sql.types import StructType, StrudctField, IntergerType, StringType
@@ -574,20 +570,18 @@ mostPopular = connections.sort(func.col("connections").desc()).first()
 mostPopularName = names.filter(func.col("id") == mostPopular[0]).select("name").first()
 
 print(mostPopulrName[0] + " is the most popular superhero with " + str(mostPopular[1]) + " co-appearances.")
+```
 
-===========
-Lecture #40
-===========
+***
 
-An accumulator allows many executoers to increment a shared variable
+## Lecture #40
 
+* An accumulator allows many executoers to increment a shared variable
 
+***
 
-##########################################
-Section #6: Machine Learning with Spark ML
-##########################################
+# Section #6: Machine Learning with Spark ML
 
+***
 
-#############################################################
-Section #7: Spark Streaming, Structured Streaming, and GraphX
-#############################################################
+# Section #7: Spark Streaming, Structured Streaming, and GraphX
