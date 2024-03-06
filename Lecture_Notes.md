@@ -59,7 +59,7 @@ for key, value in sortedResults.items():
 
 # Section 2: Spark Basics and the RDD Interface
 
-## Lecture #9
+## Lecture 09
 
 ### Deprecate
 
