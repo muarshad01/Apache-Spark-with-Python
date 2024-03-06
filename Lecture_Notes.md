@@ -204,11 +204,10 @@ results = minTemps.collect()
 for result in results:
    print(result[0] + "\t{:.2f}F".format(result[1]))
 ```
-
 ***
-
+## Lecture 16
+***
 ## Lecture 17
-
 ```
 from pyspark import SparkConf, SparkContext
 
@@ -256,7 +255,8 @@ for word, count in wordCounts.items():
 ```
 
 ***
-
+## Lecture 19
+***
 ## Lecture 20
 
 ```
@@ -284,9 +284,9 @@ for result in results:
 ```
 
 ***
-
+## Lecture 21
+***
 ## Lecture 22
-
 ```
 from pyspark import SparkConf, SparkContext
 
@@ -317,6 +317,10 @@ for result in results:
 
 ### SparkSession vs SparkContext
 
+***
+## Lecture 23
+***
+## Lecture 24
 ***
 
 # Section 03: SparkSQL, DataFrames, and DataSets
@@ -489,11 +493,12 @@ totalByCustomerSorted.show(totalByCustomerSorted.count())
 
 spark.stop()
 ```
-
 ***
-
+## Lecture 31
+***
+## Lecture 32
+***
 ## Lecture 33
-
 ```
 from pyspark.sql import SparkSession
 from pyspark.sql import functions as func
@@ -611,7 +616,16 @@ mostPopularName = names.filter(func.col("id") == mostPopular[0]).select("name").
 
 print(mostPopulrName[0] + " is the most popular superhero with " + str(mostPopular[1]) + " co-appearances.")
 ```
-
+***
+## Lecture 35
+***
+## Lecture 36
+***
+## Lecture 37
+***
+## Lecture 38
+***
+## Lecture 39
 ***
 ## Lecture 40
 * An accumulator allows many executoers to increment a shared variable
@@ -626,6 +640,7 @@ print(mostPopulrName[0] + " is the most popular superhero with " + str(mostPopul
 ***
 ## Lecture 45
 ***
+
 # Section 05: Running Sprak on a Cluster
 * Lecture [46-53]
 ***
