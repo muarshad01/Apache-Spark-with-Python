@@ -39,10 +39,6 @@ $ quit()
 ***
 
 ## Lecture 08
-
-***
-
-## Lecture 08
 ```
 from pyspark import SparkConf, SparkContext
 import collections
