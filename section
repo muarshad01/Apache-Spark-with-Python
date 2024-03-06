@@ -1,4 +1,4 @@
-# Section 01
+# Section 01: Getting Started with Spark
 
 ## Lecture 01
 
@@ -59,7 +59,6 @@ for key, value in sortedResults.items():
 
 ***
 
-# Section 02: Spark Basics and the RDD Interface
 
 ## Lecture 09
 
@@ -81,6 +80,8 @@ for key, value in sortedResults.items():
 * Binary File support
 
 ***
+
+# Section 02: Spark Basics and the RDD Interface
 
 ## Lecture 10
 
@@ -308,8 +309,6 @@ for result in results:
 
 ***
 
-# Section 03: SparkSQL, DataFrames, and DataSets
-
 * RDD -> DataFrame Object
 
 * DataFrames (like Big Database table):
@@ -322,6 +321,8 @@ for result in results:
 * SparkSession vs SparkContext
 
 ***
+
+# Section 03: SparkSQL, DataFrames, and DataSets
 
 ## Lecture 25
 ```
@@ -491,8 +492,6 @@ spark.stop()
 ```
 ***
 
-# Section 04: Advanced Examples of Spark Programs
-
 ## Lecture 33
 ```
 from pyspark.sql import SparkSession
@@ -522,6 +521,8 @@ spark.stop()
 ```
 
 ***
+
+# Section 04: Advanced Examples of Spark Programs
 
 ## Lecture 34
 
@@ -615,6 +616,21 @@ print(mostPopulrName[0] + " is the most popular superhero with " + str(mostPopul
 ## Lecture 40
 
 * An accumulator allows many executoers to increment a shared variable
+
+## Lecture 41
+***
+## Lecture 42
+***
+## Lecture 43
+***
+## Lecture 44
+***
+## Lecture 45
+***
+
+# Section 05: Running Sprak on a Cluster
+
+* Lecture [46-53]
 
 ***
 
