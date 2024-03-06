@@ -61,7 +61,6 @@ for key, value in sortedResults.items():
 
 ***
 
-
 ## Lecture 09
 
 ### Deprecate
@@ -75,9 +74,12 @@ for key, value in sortedResults.items():
 	* i) Adaptive execution,
 	* ii) dynamic-partition pruning
 
-* Better kubernetes integration (dynamic scaling)
-* Deep Learning: Take advantage of GPUs clusters MLSpark / TensorFlow
-* SparkGraph: Cypher query language (property graph model)
+* Better kubernetes integration
+	* Dynamic scaling
+* Deep Learning
+	* Take advantage of GPUs clusters MLSpark / TensorFlow
+* SparkGraph
+	* Cypher query language (property graph model)
 * Data Lake ACID support Delta Lake
 * Binary File support
 
@@ -86,11 +88,10 @@ for key, value in sortedResults.items():
 # Section 02: Spark Basics and the RDD Interface
 
 ## Lecture 10
-
 ***
-
 ## Lecture 11
-* RDD: Resilient Distributed "Dataset" object
+
+* RDD Resilient Distributed "Dataset" object (`RDD`)
 * Developer uses RDD object for data manipulation
 
 * The Spark shell creates a "sc" SparkContext object for you
@@ -99,19 +100,17 @@ sc = SparkContext(conf = conf)
 ```
 
 ### RDD operations
-1. map
-2. flatmap: multiple results per original entry
-3. filter
-4. distinct
-5. sample
-6. union, intersection, subtract, cartesian
+1. map()
+2. flatmap(): multiple results per original entry
+3. filter()
+4. distinct()
+5. sample()
+6. union(), intersection(), subtract(), cartesian()
 
 ### MAP Example:
 ```
 rdd = sc.parallelize([1, 2, 3, 4])
 rdd.map(lambda x: x*x)
-
-Output: 1, 4, 9, 16
 
 def squareIt(x):
    return x*x
@@ -120,12 +119,12 @@ rdd.map(squareIt)
 ```
 
 ### Actions on RDD
-1. collect
-2. count
-3. countByValue (break down by unique value)
+1. collect()
+2. count()
+3. countByValue() (break down by unique value)
 4. take
 5. top
-6. reduce (key, value based summation)
+6. reduce(): (key, value based summation)
 7. and more
 
 * Lazy Evaluation!!!
@@ -133,9 +132,7 @@ rdd.map(squareIt)
 ***
 
 ## Lecture 12
-
 ***
-
 ## Lecture 13
 
 * We can put complex structures like (key, value) pairs inside RDD. Then we can treat it like a simple DB.
@@ -309,8 +306,6 @@ for result in results:
    print(result)
 ```
 
-***
-
 * RDD -> DataFrame Object
 
 * DataFrames (like Big Database table):
@@ -320,7 +315,7 @@ for result in results:
 	* Read / Write to JSON, Hive, parquet, ...
 	* Communicate with JDBC / ODBC, Tableau...
 
-* SparkSession vs SparkContext
+### SparkSession vs SparkContext
 
 ***
 
@@ -387,6 +382,7 @@ people.select(people.name, people.age + 10).show()
 
 spark.stop()
 ```
+
 ***
 
 ## Lecture 27
@@ -463,6 +459,7 @@ for result in results:
 
 spark.stop()
 ```
+
 ***
 
 ## Lecture 30
@@ -492,9 +489,11 @@ totalByCustomerSorted.show(totalByCustomerSorted.count())
 
 spark.stop()
 ```
+
 ***
 
 ## Lecture 33
+
 ```
 from pyspark.sql import SparkSession
 from pyspark.sql import functions as func
@@ -614,11 +613,9 @@ print(mostPopulrName[0] + " is the most popular superhero with " + str(mostPopul
 ```
 
 ***
-
 ## Lecture 40
-
 * An accumulator allows many executoers to increment a shared variable
-
+***
 ## Lecture 41
 ***
 ## Lecture 42
@@ -629,17 +626,10 @@ print(mostPopulrName[0] + " is the most popular superhero with " + str(mostPopul
 ***
 ## Lecture 45
 ***
-
 # Section 05: Running Sprak on a Cluster
-
 * Lecture [46-53]
-
 ***
-
 # Section 06: Machine Learning with Spark ML
-
 ***
-
 # Section 07: Spark Streaming, Structured Streaming, and GraphX
-
 ***
