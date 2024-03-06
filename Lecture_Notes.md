@@ -1,3 +1,5 @@
+## Lecture 01
+
 PATH: /usr/local/Cellar/apache-spark/3.3.0/bin
 
 Install URL: https://sundog-education.com/spark-python/
@@ -6,7 +8,19 @@ http://localhost:4040
 
 ***
 
-## Lecture #5
+## Lecture 02
+
+***
+
+## Lecture 03
+
+***
+
+## Lecture 04
+
+***
+
+## Lecture 05
 ```
 $ cd /usr/local/Cellar/apache-spark/3.3.0/bin
 $ pyspark
@@ -14,11 +28,21 @@ $ rdd = sc.textFile(“README.md”)
 $ rdd.count()
 $ quit()
 ```
+***
+
+## Lecture 06
 
 ***
 
-## Lecture #8
+## Lecture 07
 
+***
+
+## Lecture 08
+
+***
+
+## Lecture 08
 ```
 from pyspark import SparkConf, SparkContext
 import collections
