@@ -80,11 +80,11 @@ for key, value in sortedResults.items():
 
 ***
 
-## Lecture #10
+## Lecture 10
 
 ***
 
-## Lecture #11
+## Lecture 11
 * RDD: Resilient Distributed "Dataset" object
 * Developer uses RDD object for data manipulation
 
@@ -124,6 +124,10 @@ rdd.map(squareIt)
 7. and more
 
 * Lazy Evaluation!!!
+
+***
+
+## Lecture #12
 
 ***
 
