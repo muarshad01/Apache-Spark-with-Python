@@ -1,3 +1,5 @@
+# Section 01
+
 ## Lecture 01
 
 PATH: /usr/local/Cellar/apache-spark/3.3.0/bin
@@ -57,7 +59,7 @@ for key, value in sortedResults.items():
 
 ***
 
-# Section 2: Spark Basics and the RDD Interface
+# Section 02: Spark Basics and the RDD Interface
 
 ## Lecture 09
 
@@ -306,7 +308,7 @@ for result in results:
 
 ***
 
-# Section 3: SparkSQL, DataFrames, and DataSets
+# Section 03: SparkSQL, DataFrames, and DataSets
 
 * RDD -> DataFrame Object
 
@@ -489,7 +491,7 @@ spark.stop()
 ```
 ***
 
-# Section 4: Advanced Examples of Spark Programs
+# Section 04: Advanced Examples of Spark Programs
 
 ## Lecture 33
 ```
@@ -621,3 +623,5 @@ print(mostPopulrName[0] + " is the most popular superhero with " + str(mostPopul
 ***
 
 # Section 07: Spark Streaming, Structured Streaming, and GraphX
+
+***
