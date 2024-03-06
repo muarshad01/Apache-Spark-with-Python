@@ -127,11 +127,11 @@ rdd.map(squareIt)
 
 ***
 
-## Lecture #12
+## Lecture 12
 
 ***
 
-## Lecture #13
+## Lecture 13
 
 * We can put complex structures like (key, value) pairs inside RDD. Then we can treat it like a simple DB.
 
@@ -152,7 +152,8 @@ rdd.map(squareIt)
 
 ***
 
-## Lecture #14
+## Lecture 14
+
 ```
 from pyspark import SparkConf, SparkContext
 
@@ -176,7 +177,8 @@ for result in results:
 
 *** 
 
-## Lecture #15
+## Lecture 15
+
 ```
 from pyspark import SparkConf, SparkContext
 
@@ -203,7 +205,8 @@ for result in results:
 
 ***
 
-## Lecture #17
+## Lecture 17
+
 ```
 from pyspark import SparkConf, SparkContext
 
@@ -230,7 +233,7 @@ for result in results:
 
 ***
 
-## Lecture #18
+## Lecture 18
 
 * MAP (1-1 RDD) vs flatMAP (1-many RDD)
 
@@ -252,7 +255,8 @@ for word, count in wordCounts.items():
 
 ***
 
-## Lecture #20
+## Lecture 20
+
 ```
 import re
 from pyspark import SparkConf, SparkContext
@@ -279,7 +283,8 @@ for result in results:
 
 ***
 
-## Lecture #22
+## Lecture 22
+
 ```
 from pyspark import SparkConf, SparkContext
 
@@ -316,7 +321,7 @@ for result in results:
 
 ***
 
-## Lecture #25
+## Lecture 25
 ```
 from pyspark.sql import SparkSession
 from pyspark.sql import Row
@@ -351,7 +356,7 @@ spark.stop()
 
 ***
 
-## Lecture #26
+## Lecture 26
 ```
 from pyspark.sql import SparkSession
 
@@ -379,7 +384,11 @@ spark.stop()
 ```
 ***
 
-## Lecture #28
+## Lecture 27
+
+***
+
+## Lecture 28
 ```
 from pyspark.sql import SparkSession
 from pyspark.sql import Row
@@ -407,7 +416,7 @@ friendsByAge.groupBy("age").agg(func.round(func.avg("friends"), 2).alias("friend
 spark.stop()
 ```
 
-## Lecture #30
+## Lecture 29
 ```
 from pyspark.sql import SparkSession
 from pyspark.sql import functions as func
@@ -451,7 +460,8 @@ spark.stop()
 ```
 ***
 
-## Lecture #32
+## Lecture 30
+
 ```
 from pyspark.sql import SparkSession
 from pyspark.sql import functions as func
@@ -481,7 +491,7 @@ spark.stop()
 
 # Section 4: Advanced Examples of Spark Programs
 
-## Lecture #33
+## Lecture 33
 ```
 from pyspark.sql import SparkSession
 from pyspark.sql import functions as func
@@ -511,7 +521,7 @@ spark.stop()
 
 ***
 
-## Lecture #34
+## Lecture 34
 
 * Join: Attach movieNames with movieIDs
 * Dictionary loaded in driver program
@@ -570,7 +580,8 @@ spark.stop()
 
 ***
 
-## Lecture #35
+## Lecture 35
+
 ```
 from pyspark.sql import SparkSession
 from pyspark.sql import functions as func
@@ -599,14 +610,14 @@ print(mostPopulrName[0] + " is the most popular superhero with " + str(mostPopul
 
 ***
 
-## Lecture #40
+## Lecture 40
 
 * An accumulator allows many executoers to increment a shared variable
 
 ***
 
-# Section #6: Machine Learning with Spark ML
+# Section 06: Machine Learning with Spark ML
 
 ***
 
-# Section #7: Spark Streaming, Structured Streaming, and GraphX
+# Section 07: Spark Streaming, Structured Streaming, and GraphX
