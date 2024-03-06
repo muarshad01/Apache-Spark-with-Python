@@ -2,11 +2,13 @@
 
 ## Lecture 01
 
-PATH: /usr/local/Cellar/apache-spark/3.3.0/bin
+### PATH 
+* `/usr/local/Cellar/apache-spark/3.3.0/bin`
 
-Install URL: https://sundog-education.com/spark-python/
+### Installation URL
+* `https://sundog-education.com/spark-python/`
 
-http://localhost:4040
+* `http://localhost:4040`
 
 ***
 
