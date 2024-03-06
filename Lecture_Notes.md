@@ -100,14 +100,17 @@ sc = SparkContext(conf = conf)
 ```
 
 ### RDD operations
-1. map()
-2. flatmap(): multiple results per original entry
-3. filter()
-4. distinct()
-5. sample()
-6. union(), intersection(), subtract(), cartesian()
+1. `map()`
+2. `flatMap()`: multiple results per original entry
+3. `filter()`
+4. `distinct()`
+5. `sample()`
+6. `union()`
+7. `intersection()`
+8. `subtract()`
+9. `cartesian()`
 
-### MAP Example:
+### MAP Example
 ```
 rdd = sc.parallelize([1, 2, 3, 4])
 rdd.map(lambda x: x*x)
@@ -119,12 +122,12 @@ rdd.map(squareIt)
 ```
 
 ### Actions on RDD
-1. collect()
-2. count()
-3. countByValue() (break down by unique value)
+1. `collect()`
+2. `count()`
+3. `countByValue()` (break down by unique value)
 4. take
 5. top
-6. reduce(): (key, value based summation)
+6. `reduce()`: (key, value based summation)
 7. and more
 
 * Lazy Evaluation!!!
@@ -137,20 +140,19 @@ rdd.map(squareIt)
 
 * We can put complex structures like (key, value) pairs inside RDD. Then we can treat it like a simple DB.
 
-### key / value RDDs
-1. reduceByKey()
-2. GroupByKey()
-3. sortByKey()
-4. keys()
-5. values()
+### `(key, value)` RDDs
+1. `reduceByKey()`
+2. `GroupByKey()`
+3. `sortByKey()`
+4. `keys()`
+5. `values()`
+6. `join()`
+7. `rightOuterJoin()`
+8. `leftOuterJoin()`
+9. `cogroup()`
+10. `subtractByKey()`
 
-1. join()
-2. rightOuterJoin()
-3. leftOuterJoin()
-4. cogroup()
-5. subtractByKey()
-
-* mapValues() / flatMapValues() -- if your transformation doesn't affect the keys.
+* `mapValues()` / `flatMapValues()` :if your transformation doesn't affect the keys.
 
 ***
 
