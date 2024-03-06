@@ -18,6 +18,7 @@ $ quit()
 ***
 
 ## Lecture #8
+
 ```
 from pyspark import SparkConf, SparkContext
 import collections
@@ -57,20 +58,18 @@ SparkGraph: Cypher query language (property graph model)
 Data Lake ACID support Delta Lake
 Binary File support
 
-===========
-Lecture #10
-===========
+***
 
+## Lecture #10
 
+***
 
-==========
-Lecture #11
-==========
+## Lecture #11
 
-RDD: Resilient Distributed "Dataset" object
-Developer uses RDD object for data manipulation
+* RDD: Resilient Distributed "Dataset" object
+* Developer uses RDD object for data manipulation
 
-The Spark shell creates a "sc" SparkContext object for you
+* The Spark shell creates a "sc" SparkContext object for you
 -- sc = SparkContext(conf = conf)
 
 RDD operations:
@@ -81,8 +80,8 @@ RDD operations:
 -- sample
 -- union, intersection, subtract, cartesian
 
-MAP Example:
-------------
+### MAP Example:
+```
 rdd = sc.parallelize([1, 2, 3, 4])
 rdd.map(lambda x: x*x)
 
@@ -92,11 +91,9 @@ def squareIt(x):
    return x*x
 
 rdd.map(squareIt)
+```
 
-
-Actions on RDD:
----------------
-
+### Actions on RDD
 -- collect
 -- count
 -- countByValue (break down by unique value)
@@ -107,11 +104,11 @@ Actions on RDD:
 
 Lazy Evaluation!!!
 
-===========
-Lecture #13
-===========
+***
 
-We can put complex structures like (key, value) pairs inside RDD. Then we can treat it like a simple DB.
+## Lecture #13
+
+* We can put complex structures like (key, value) pairs inside RDD. Then we can treat it like a simple DB.
 key / value RDDs
 
 -- reduceByKey()
