@@ -1,5 +1,3 @@
-# Section 04: Advanced Examples of Spark Programs
-
 ## Lecture 34
 
 * Join: Attach movieNames with movieIDs
@@ -98,7 +96,7 @@ print(mostPopulrName[0] + " is the most popular superhero with " + str(mostPopul
 ## Lecture 39
 ***
 ## Lecture 40
-* An accumulator allows many executoers to increment a shared variable
+* An accumulator allows many executors to increment a shared variable
 ***
 ## Lecture 41
 ***

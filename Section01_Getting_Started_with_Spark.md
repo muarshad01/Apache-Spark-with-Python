@@ -1,5 +1,3 @@
-# Section 01: Getting Started with Spark
-
 ## Lecture 01
 
 ### PATH 
@@ -32,6 +30,7 @@ $ rdd = sc.textFile(“README.md”)
 $ rdd.count()
 $ quit()
 ```
+
 ***
 
 ## Lecture 06
@@ -43,6 +42,7 @@ $ quit()
 ***
 
 ## Lecture 08
+
 ```
 from pyspark import SparkConf, SparkContext
 import collections
@@ -66,21 +66,23 @@ for key, value in sortedResults.items():
 ### Deprecate
 
 * Deprecate Python2 --> Python3
-* Deprecate old MLLib (based on rdd interface) -> Data Frame / Data Set based
+* Deprecate old MLLib (based on RDD interface)
+    * DataFrame / DataSet based
 
 ### Faster & Better Performance
 
-* Spark3 is 17 times faster than Spark2
+* Spark3 vs Sprak2 
+    * is 17 times faster than Spark2
 	* i) Adaptive execution,
 	* ii) dynamic-partition pruning
 
-* Better kubernetes integration
+* Better k8ss integration
 	* Dynamic scaling
 * Deep Learning
 	* Take advantage of GPUs clusters MLSpark / TensorFlow
 * SparkGraph
 	* Cypher query language (property graph model)
-* Data Lake ACID support Delta Lake
+* Data Lake ACID support DeltaLake
 * Binary File support
 
 ***

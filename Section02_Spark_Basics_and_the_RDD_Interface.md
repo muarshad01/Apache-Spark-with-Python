@@ -1,21 +1,20 @@
-
-# Section 02: Spark Basics and the RDD Interface
-
 ## Lecture 10
+
 ***
+
 ## Lecture 11
 
-* RDD Resilient Distributed "Dataset" object (`RDD`)
+* Resilient Distributed Dataset (`RDD`) object
 * Developer uses RDD object for data manipulation
 
-* The Spark shell creates a "sc" SparkContext object for you
+* The Spark shell creates a "`sc = SparkContext()` object for you
 ```
 sc = SparkContext(conf = conf)
 ```
 
 ### RDD operations
 1. `map()`
-2. `flatMap()`: multiple results per original entry
+2. `flatMap()`  # multiple results per original entry
 3. `filter()`
 4. `distinct()`
 5. `sample()`
@@ -52,7 +51,8 @@ rdd.map(squareIt)
 ***
 ## Lecture 13
 
-* We can put complex structures like (key, value) pairs inside RDD. Then we can treat it like a simple DB.
+* We can put complex structures like `(key, value)` pairs inside RDD. 
+    * Then we can treat it like a simple DB.
 
 ### `(key, value)` RDDs
 1. `reduceByKey()`
@@ -66,7 +66,7 @@ rdd.map(squareIt)
 9. `cogroup()`
 10. `subtractByKey()`
 
-* `mapValues()` / `flatMapValues()` :if your transformation doesn't affect the keys.
+* `mapValues()` vs `flatMapValues()`    # if your transformation doesn't affect the keys.
 
 ***
 
@@ -152,7 +152,10 @@ for result in results:
 
 ## Lecture 18
 
-* MAP (1-1 RDD) vs flatMAP (1-many RDD)
+* `map()` 
+    * (1-1 RDD)
+* `flatMap()` 
+    * (1-many RDD)
 
 ```
 from pyspark import SparkConf, SparkContext

@@ -1,5 +1,3 @@
-# Section 03: SparkSQL, DataFrames, and DataSets
-
 ## Lecture 25
 ```
 from pyspark.sql import SparkSession
@@ -200,5 +198,4 @@ topMovieIDs.show(10)
 # Stop the session
 spark.stop()
 ```
-
 ***
