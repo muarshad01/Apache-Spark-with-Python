@@ -5,7 +5,7 @@
 * Broadcast the object and retrieve dictionary from it!
 * UDFs
 
-```
+```python
 from pyspark.sql import SparkSession
 from pyspark.sql import functions as func
 from pyspark.sql.types import StructType, StructField, IntegerType, LongType
@@ -59,7 +59,7 @@ spark.stop()
 
 ## Lecture 35
 
-```
+```python
 from pyspark.sql import SparkSession
 from pyspark.sql import functions as func
 from pyspark.sql.types import StructType, StrudctField, IntergerType, StringType
@@ -84,26 +84,46 @@ mostPopularName = names.filter(func.col("id") == mostPopular[0]).select("name").
 
 print(mostPopulrName[0] + " is the most popular superhero with " + str(mostPopular[1]) + " co-appearances.")
 ```
+
 ***
+
 ## Lecture 35
+
 ***
+
 ## Lecture 36
+
 ***
+
 ## Lecture 37
+
 ***
+
 ## Lecture 38
+
 ***
+
 ## Lecture 39
+
 ***
+
 ## Lecture 40
 * An accumulator allows many executors to increment a shared variable
+
 ***
+
 ## Lecture 41
+
 ***
+
 ## Lecture 42
+
 ***
+
 ## Lecture 43
+
 ***
+
 ## Lecture 44
 ***
 ## Lecture 45
