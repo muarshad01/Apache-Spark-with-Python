@@ -13,6 +13,7 @@ sc = SparkContext(conf = conf)
 ```
 
 ### RDD operations
+
 1. `map()`
 2. `flatMap()`  # multiple results per original entry
 3. `filter()`
@@ -24,7 +25,8 @@ sc = SparkContext(conf = conf)
 9. `cartesian()`
 
 ### MAP Example
-```
+
+```python
 rdd = sc.parallelize([1, 2, 3, 4])
 rdd.map(lambda x: x*x)
 
@@ -48,7 +50,9 @@ rdd.map(squareIt)
 ***
 
 ## Lecture 12
+
 ***
+
 ## Lecture 13
 
 * We can put complex structures like `(key, value)` pairs inside RDD. 
@@ -72,7 +76,7 @@ rdd.map(squareIt)
 
 ## Lecture 14
 
-```
+```python
 from pyspark import SparkConf, SparkContext
 
 conf = SparkConf().setMaster("local").setAppName("FriendsByAge")
@@ -97,7 +101,7 @@ for result in results:
 
 ## Lecture 15
 
-```
+```python
 from pyspark import SparkConf, SparkContext
 
 conf = SparkConf().setMaster("local").setAppName("MinTemperatures")
@@ -120,11 +124,16 @@ results = minTemps.collect()
 for result in results:
    print(result[0] + "\t{:.2f}F".format(result[1]))
 ```
+
 ***
+
 ## Lecture 16
+
 ***
+
 ## Lecture 17
-```
+
+```python
 from pyspark import SparkConf, SparkContext
 
 conf = SparkConf().setMaster("local").setAppName("MaxTemperatures")
@@ -157,7 +166,7 @@ for result in results:
 * `flatMap()` 
     * (1-many RDD)
 
-```
+```python
 from pyspark import SparkConf, SparkContext
 
 conf = SparkConf().setMaster("local").setAppName("WordCount")
@@ -174,11 +183,14 @@ for word, count in wordCounts.items():
 ```
 
 ***
+
 ## Lecture 19
+
 ***
+
 ## Lecture 20
 
-```
+```python
 import re
 from pyspark import SparkConf, SparkContext
 
@@ -203,10 +215,14 @@ for result in results:
 ```
 
 ***
+
 ## Lecture 21
+
 ***
+
 ## Lecture 22
-```
+
+```python
 from pyspark import SparkConf, SparkContext
 
 conf = SparkConf().setMaster("local").setAppName("SpendByCustomer")
@@ -237,7 +253,11 @@ for result in results:
 ### SparkSession vs SparkContext
 
 ***
+
 ## Lecture 23
+
 ***
+
 ## Lecture 24
+
 ***
