@@ -43,7 +43,7 @@ $ quit()
 
 ## Lecture 08
 
-```
+```python
 from pyspark import SparkConf, SparkContext
 import collections
 
