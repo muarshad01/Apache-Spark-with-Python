@@ -1,5 +1,6 @@
 ## Lecture 25
-```
+
+```python
 from pyspark.sql import SparkSession
 from pyspark.sql import Row
 
@@ -34,7 +35,8 @@ spark.stop()
 ***
 
 ## Lecture 26
-```
+
+```python
 from pyspark.sql import SparkSession
 
 spark = SparkSession.builder.appName("SparkSQL").getOrCreate()
@@ -67,7 +69,8 @@ spark.stop()
 ***
 
 ## Lecture 28
-```
+
+```python
 from pyspark.sql import SparkSession
 from pyspark.sql import Row
 from pyspark.sql import functions as func
@@ -95,7 +98,8 @@ spark.stop()
 ```
 
 ## Lecture 29
-```
+
+```python
 from pyspark.sql import SparkSession
 from pyspark.sql import functions as func
 from pyspark.sql.types import StructType, StructField, StringType, IntegerType, FloatType
@@ -141,7 +145,7 @@ spark.stop()
 
 ## Lecture 30
 
-```
+```python
 from pyspark.sql import SparkSession
 from pyspark.sql import functions as func
 from pyspark.sql.types import StructType, StructField, IntegerType, FloatType 
@@ -167,12 +171,18 @@ totalByCustomerSorted.show(totalByCustomerSorted.count())
 spark.stop()
 ```
 ***
+
 ## Lecture 31
+
 ***
+
 ## Lecture 32
+
 ***
+
 ## Lecture 33
-```
+
+```python
 from pyspark.sql import SparkSession
 from pyspark.sql import functions as func
 from pyspark.sql.types import StructType, StructField, IntegerType, LongType
@@ -198,4 +208,5 @@ topMovieIDs.show(10)
 # Stop the session
 spark.stop()
 ```
+
 ***
