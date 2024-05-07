@@ -59,15 +59,15 @@ rdd.map(squareIt)
     * Then we can treat it like a simple DB.
 
 ### `(key, value)` RDDs
-1. `reduceByKey()`
-2. `GroupByKey()`
-3. `sortByKey()`
-4. `keys()`
-5. `values()`
-6. `join()`
-7. `rightOuterJoin()`
-8. `leftOuterJoin()`
-9. `cogroup()`
+01. `reduceByKey()`
+02. `GroupByKey()`
+03. `sortByKey()`
+04. `keys()`
+05. `values()`
+06. `join()`
+07. `rightOuterJoin()`
+08. `leftOuterJoin()`
+09. `cogroup()`
 10. `subtractByKey()`
 
 * `mapValues()` vs `flatMapValues()`    # if your transformation doesn't affect the keys.
@@ -83,10 +83,10 @@ conf = SparkConf().setMaster("local").setAppName("FriendsByAge")
 sc = SparkContext(conf = conf)
 
 def parseLine(line):
-   fields = line.split(',')
-   age = int(fields[2])
-   numFriends = int(fields[3])
-   return (age, numFriends)
+	fields = line.split(',')
+   	age = int(fields[2])
+   	numFriends = int(fields[3])
+   	return (age, numFriends)
 
 lines = sc.textFile("/Users/marshad/Desktop/SparkCourse/fakefriends.csv")
 rdd = lines.map(parseLine)
@@ -94,7 +94,7 @@ totalsByAge = rdd.mapValues(lambda x: (x, 1)).reduceByKey(lambda x, y: (x[0] + y
 averageByAge = totalByAge.mapValues(lambda x: x[0] / x[1])
 results = averageByAge.collect()
 for result in results:
-   print(result)
+	print(result)
 ```
 
 *** 
@@ -108,11 +108,11 @@ conf = SparkConf().setMaster("local").setAppName("MinTemperatures")
 sc = SparkContext(conf = conf)
 
 def parseLine(line):
-   fields = line.split(',')
-   stationID = fields[0]
-   entryType = fields[2]
-   temperature = float(fields[3])*0.1*(9.0 / 5.0) + 32.0
-   return (stationID, entryType, temperature)
+	fields = line.split(',')
+   	stationID = fields[0]
+   	entryType = fields[2]
+   	temperature = float(fields[3])*0.1*(9.0 / 5.0) + 32.0
+   	return (stationID, entryType, temperature)
 
 lines = sc.textFile("/Users/marshad/Desktop/SparkCourse/1800.csv")
 parsedLines = lines.map(parseLine)
@@ -122,7 +122,7 @@ minTemps = stationTemps.reduceByKey(lambda x, y: min(x, y))
 results = minTemps.collect()
 
 for result in results:
-   print(result[0] + "\t{:.2f}F".format(result[1]))
+	print(result[0] + "\t{:.2f}F".format(result[1]))
 ```
 
 ***
@@ -140,11 +140,11 @@ conf = SparkConf().setMaster("local").setAppName("MaxTemperatures")
 sc = SparkContext(conf = conf)
 
 def parseLine(line):
-   fields = line.split(',')
-   stationID = fields[0]
-   entryType = fields[2]
-   temperature = float(fields[3]) * 0.1 * (9.0 / 5.0) + 32.0
-   return (stationID, entryType, temperature)
+	fields = line.split(',')
+   	stationID = fields[0]
+   	entryType = fields[2]
+   	temperature = float(fields[3]) * 0.1 * (9.0 / 5.0) + 32.0
+   	return (stationID, entryType, temperature)
 
 lines = sc.textFile("/Users/marshad/Desktop/SparkCourse/data/1800.csv")
 parsedLines = lines.map(parseLine)
@@ -154,7 +154,7 @@ maxTemps = stationTemps.reduceByKey(lambda x, y: max(x, y))
 results = maxTemps.collect()
 
 for result in results:
-   print(result[0] + "\t{:.2f}F".format(result[1]))
+	print(result[0] + "\t{:.2f}F".format(result[1]))
 ```
 
 ***
@@ -177,9 +177,9 @@ words = input.flatMap(lambda x: x.split())
 wordCounts = words.countByValue()
 
 for word, count in wordCounts.items():
-   cleanWord = word.encode('ascii', 'ignore')
-   if (cleanWord):
-      print(cleanWord.decode() + " " + str(count))
+	cleanWord = word.encode('ascii', 'ignore')
+   	if (cleanWord):
+      		print(cleanWord.decode() + " " + str(count))
 ```
 
 ***
@@ -198,7 +198,7 @@ conf = SparkConf().setMaster("local").setAppName("WordCount")
 sc = SparkContext(conf = conf)
 
 def normalizeWords(text):
-   return re.compile(r'\W+', re.UNICODE).split(text.lower());
+	return re.compile(r'\W+', re.UNICODE).split(text.lower());
 
 input = sc.textFile("/Users/marshad/Desktop/SparkCourse/data/Book")
 words = input.flatMap(normalizeWords)
@@ -208,10 +208,10 @@ wordCountsSorted = wordCounts.map(lambda x: (x[1], x[0])).sortByKey()
 results = wordCountsSorted.collect()
 
 for result in results:
-   count = str(result[0])
-   word = result[1].encode('ascii', 'ignore')
-   if (word):
-      print(word.decode() + ":\t\t" + count)
+	count = str(result[0])
+   	word = result[1].encode('ascii', 'ignore')
+   	if (word):
+      		print(word.decode() + ":\t\t" + count)
 ```
 
 ***
@@ -229,8 +229,8 @@ conf = SparkConf().setMaster("local").setAppName("SpendByCustomer")
 sc = SparkContext(conf = conf)
 
 def extractCustomerPricePairs(line):
-   fields = line.split(',')
-   return (int(fields[0]), float(fields[2]))
+	fields = line.split(',')
+   	return (int(fields[0]), float(fields[2]))
 
 input = sc.textFile("/Users/marshad/Desktop/SparkCourse/data/customer-orders.csv")
 mappedInput = input.map(extractCustomerPricePairs)
@@ -238,7 +238,7 @@ totalByCustomer = mappedInput.reduceByKey(lambda x, y: x + y)
 
 results = totalByCustomer.collect()
 for result in results:
-   print(result)
+	print(result)
 ```
 
 * RDD -> DataFrame Object
