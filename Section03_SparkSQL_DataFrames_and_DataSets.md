@@ -10,7 +10,7 @@ spark = SparkSession.builder.appName("SparkSQL").getOrCreate()
 def mapper(line):
     fields = line.split(',')
     return Row(ID=int(fields[0]), name=str(fields[1].encode("utf-8")), \
-               age=int(fields[2]), numFriends=int(fields[3]))
+        age=int(fields[2]), numFriends=int(fields[3]))
 
 lines = spark.sparkContext.textFile("/Users/marshad/Desktop/SparkCourse/data/fakefriends.csv")
 people = lines.map(mapper)
@@ -24,7 +24,7 @@ teenagers = spark.sql("SELECT * FROM people WHERE age >= 13 AND age <= 19")
 
 # The results of SQL queries are RDDs and support all the normal RDD operations.
 for teen in teenagers.collect():
-  print(teen)
+    print(teen)
 
 # We can also use functions instead of SQL queries:
 schemaPeople.groupBy("age").count().orderBy("age").show()
@@ -41,8 +41,8 @@ from pyspark.sql import SparkSession
 
 spark = SparkSession.builder.appName("SparkSQL").getOrCreate()
 
-people = spark.read.option("header", "true").option("inferschema", "true")\
-        .csv("/Users/marshad/Desktop/SparkCourse/data/fakefriends-header.csv")
+people = spark.read.option("header", "true").option("inferschema", "true") \
+    .csv("/Users/marshad/Desktop/SparkCourse/data/fakefriends-header.csv")
 
 print("Here is our inferred schema:")
 people.printSchema()
@@ -154,9 +154,9 @@ spark = SparkSession.builder.appName("TotalSpentByCustomer").master("local[*]").
 
 # create the schema when reading customer-orders
 customerOrderSchema = StructType([\
-                                StructField("cust_id", IntegerType(), True),
-                                StructField("item_id", IntegerType(), True),
-                                StructField("amount_spent", FloatType(), True)
+                                    StructField("cust_id", IntegerType(), True),
+                                    StructField("item_id", IntegerType(), True),
+                                    StructField("amount_spent", FloatType(), True)
                                 ])
 
 # Load up the data into spark
@@ -170,6 +170,7 @@ totalByCustomerSorted.show(totalByCustomerSorted.count())
 
 spark.stop()
 ```
+
 ***
 
 ## Lecture 31
