@@ -23,7 +23,7 @@
 ***
 
 ## Lecture 05
-```
+```python
 $ cd /usr/local/Cellar/apache-spark/3.3.0/bin
 $ pyspark
 $ rdd = sc.textFile(“README.md”)
