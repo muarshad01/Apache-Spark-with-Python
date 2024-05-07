@@ -71,18 +71,18 @@ for key, value in sortedResults.items():
 
 ### Faster & Better Performance
 
-* Spark3 vs Sprak2 
-    * is 17 times faster than Spark2
-	* i) Adaptive execution,
-	* ii) dynamic-partition pruning
+* `Spark3` versus `Sprak2` 
+	* 17 times faster than Spark2
+	* Adaptive execution
+	* Dynamic-partition pruning
 
-* Better k8ss integration
+* Better k8s Integration
 	* Dynamic scaling
 * Deep Learning
-	* Take advantage of GPUs clusters MLSpark / TensorFlow
+	* Take advantage of GPUs clusters `MLSpark` / `TensorFlow`
 * SparkGraph
 	* Cypher query language (property graph model)
-* Data Lake ACID support DeltaLake
+* Data Lake ACID support `DeltaLake`
 * Binary File support
 
 ***
