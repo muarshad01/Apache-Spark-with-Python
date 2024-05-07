@@ -31,7 +31,7 @@ rdd = sc.parallelize([1, 2, 3, 4])
 rdd.map(lambda x: x*x)
 
 def squareIt(x):
-   return x*x
+	return x*x
 
 rdd.map(squareIt)
 ```
