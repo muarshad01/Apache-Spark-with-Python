@@ -26,10 +26,11 @@ nameDict = spark.sparkContext.broadcast(loadMovieNames())
 
 # create schema when reading u.data
 schema = StructType([ \
-            StructField("userID", IntegerType(), True), \
-            StructField("movieID", IntegerType(), True), \
-            StructField("rating", IntegerType(), True), \
-            StructField("timestampuserID", LongType(), True)])
+                        StructField("userID", IntegerType(), True), \
+                        StructField("movieID", IntegerType(), True), \
+                        StructField("rating", IntegerType(), True), \
+                        StructField("timestampuserID", LongType(), True)
+                    ])
 
 # Load up movie data as dataframe
 moviesDF = spark.read.option("sep", "\t").schema(schema).csv("/Users/marshad/Desktop/SparkCourse/data/ml-100k/u.data")
@@ -67,8 +68,9 @@ from pyspark.sql.types import StructType, StrudctField, IntergerType, StringType
 spark = SparkSession.builder.appName("MostPopularSuperhero").getOrCreate()
 
 schema = StructType([\
-            StructField("id", IntegerType(), True),
-            StructField("name", StringType(), True)])
+                        StructField("id", IntegerType(), True),
+                        StructField("name", StringType(), True)
+                    ])
 
 name = spark.read.schema(schema).option("sep", " ").csv("/Users/marshad/Desktop/SparkCourse/data/Marvel-names.txt")
 
@@ -125,6 +127,9 @@ print(mostPopulrName[0] + " is the most popular superhero with " + str(mostPopul
 ***
 
 ## Lecture 44
+
 ***
+
 ## Lecture 45
+
 ***
