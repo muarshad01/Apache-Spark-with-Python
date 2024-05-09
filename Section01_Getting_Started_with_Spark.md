@@ -29,6 +29,7 @@ $ pyspark
 $ rdd = sc.textFile('README.md')
 $ rdd.count()
 $ quit()
+$
 ```
 
 ***
