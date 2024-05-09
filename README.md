@@ -10,10 +10,17 @@
 
 ***
 
-## PATH SetUp
+### PATH SetUp
 ```
 $ vim ~/.bash_profile
 export SPARK_HOME=/opt/homebrew/Cellar/apache-spark/3.5.1/libexec
 export PATH=$PATH:SPARK_HOME/bin
 source ~/.bash_profile
+```
+
+### Run the code
+
+```
+$ /Users/marshad/Desktop/SparkCourse/code
+$ spark-submit ratings-counter.py
 ```
