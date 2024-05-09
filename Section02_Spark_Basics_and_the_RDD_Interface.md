@@ -79,13 +79,17 @@ rdd.map(squareIt)
 
 ***
 
-## Lecture 13
+## Lecture 13 - Ratings Histogram Walkthrough
+
+***
+
+## Lecture 14
 
 * We can put complex structures like `(key, value)` pairs inside RDD. 
-    * Then we can treat it like a simple DB.
+	* Then we can treat it like a simple DB.
 
 ### `(key, value)` RDDs
-01. `reduceByKey()`
+01. `rdd.reduceByKey(lambda x, y:x + y)`
 02. `GroupByKey()`
 03. `sortByKey()`
 04. `keys()`
@@ -96,11 +100,8 @@ rdd.map(squareIt)
 09. `cogroup()`
 10. `subtractByKey()`
 
-* `mapValues()` vs `flatMapValues()`    # if your transformation doesn't affect the keys.
-
-***
-
-## Lecture 14
+* `mapValues()` versus `flatMapValues()`    # If your transformation doesn't affect the keys.
+* `Tuple: (ID, name, age, #friends)`
 
 ```python
 from pyspark import SparkConf, SparkContext
@@ -110,11 +111,12 @@ sc = SparkContext(conf = conf)
 
 def parseLine(line):
 	fields = line.split(',')
-   	age = int(fields[2])
-   	numFriends = int(fields[3])
-   	return (age, numFriends)
+	age = int(fields[2])
+	numFriends = int(fields[3])
+	return (age, numFriends)
 
-lines = sc.textFile("/Users/marshad/Desktop/SparkCourse/fakefriends.csv")
+lines = sc.textFile('/Users/marshad/Desktop/SparkCourse/data/fakefriends.csv')
+# passing parseLine function as a parameter
 rdd = lines.map(parseLine)
 totalsByAge = rdd.mapValues(lambda x: (x, 1)).reduceByKey(lambda x, y: (x[0] + y[0], x[1] + y[1]))
 averageByAge = totalByAge.mapValues(lambda x: x[0] / x[1])
