@@ -26,10 +26,10 @@
 
 ## Lecture 11
 * Spark Core
-	* Spark Streaming
-	* Spark SQL
-	* MLLib
-	* GraphX
+	* `Spark Streaming`
+	* `Spark SQL`
+	* `MLLib`
+	* `GraphX`
 
 ***
 
