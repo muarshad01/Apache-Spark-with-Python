@@ -132,7 +132,7 @@ for result in results:
 
 *** 
 
-
+## Lecture 16
 
 ```python
 from pyspark import SparkConf, SparkContext
@@ -157,10 +157,6 @@ results = minTemps.collect()
 for result in results:
 	print(result[0] + "\t{:.2f}F".format(result[1]))
 ```
-
-***
-
-## Lecture 16
 
 ***
 
