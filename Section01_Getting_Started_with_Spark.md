@@ -61,6 +61,13 @@ source ~/.bash_profile
 
 ## Lecture 09 - [Activity] Run your first Spark program! Ratings histogram example.
 
+### Run the code
+
+```
+$ /Users/marshad/Desktop/SparkCourse/code
+$ spark-submit ratings-counter.py
+```
+
 ```python
 from pyspark import SparkConf, SparkContext
 import collections
@@ -68,7 +75,7 @@ import collections
 conf = SparkConf().setMaster("local").setAppName("RatingHistogram")
 sc = SparkContext(conf = conf)
 
-lines = sc.textFile("/Users/marshad/Desktop/SparkCourse/ml-100k/u.data")
+lines = sc.textFile("/Users/marshad/Desktop/SparkCourse/data/ml-100k/u.data")
 ratings = lines.map(lambda x: x.split()[2])
 result = ratings.countByValue()
 
