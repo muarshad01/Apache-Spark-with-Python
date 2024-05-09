@@ -89,7 +89,7 @@ rdd.map(squareIt)
 	* Then we can treat it like a simple DB.
 
 ### `(key, value)` RDDs
-01. `rdd.reduceByKey(lambda x, y:x + y)`
+01. `rdd.reduceByKey(lambda x, y : x + y)`
 02. `GroupByKey()`
 03. `sortByKey()`
 04. `keys()`
