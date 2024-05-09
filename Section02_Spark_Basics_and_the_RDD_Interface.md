@@ -105,6 +105,7 @@ rdd.map(squareIt)
 
 ***
 
+## Lecture 15. [Activity] Running the Average Friends by Age Example
 * File `friends-by-age.py`
 ```python
 from pyspark import SparkConf, SparkContext
@@ -131,7 +132,7 @@ for result in results:
 
 *** 
 
-## Lecture 15
+
 
 ```python
 from pyspark import SparkConf, SparkContext
