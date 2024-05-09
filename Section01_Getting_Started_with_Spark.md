@@ -61,6 +61,7 @@ source ~/.bash_profile
 
 ## Lecture 09 - [Activity] Run your first Spark program! Ratings histogram example.
 
+* File `ratings-counter.py`
 ```python
 import collections
 from pyspark import SparkConf, SparkContext
