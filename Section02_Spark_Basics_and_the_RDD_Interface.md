@@ -25,14 +25,17 @@
 ***
 
 ## Lecture 11
-
-* Resilient Distributed Dataset (`RDD`) object
-* Developer uses RDD object for data manipulation
 * Spark Core
 	* Spark Streaming
 	* Spark SQL
 	* MLLib
 	* GraphX
+
+***
+
+## Lecture 12
+* Resilient Distributed Dataset (`RDD`) object
+* Developer uses RDD object for data manipulation
 * The Spark shell creates a `sc = SparkContext()` object
 ```
 sc = SparkContext(conf = conf)
@@ -41,26 +44,25 @@ sc = SparkContext(conf = conf)
 ### RDD operations
 1. `map()`
 2. `flatMap()`  # multiple results per original entry
-#### Select 
 3. `distinct()`
 4. `filter()`
 5. `sample()`
-#### Join
 6. `cartesian()`
 7. `union()`
 8. `intersection()`
-#### Having
 9. `subtract()`
 
-### MAP Example
+#### `map()` Example
 
 ```python
 rdd = sc.parallelize([1, 2, 3, 4])
 rdd.map(lambda x: x*x)
 
+
 def squareIt(x):
 	return x*x
 
+# passing a function as a parameter
 rdd.map(squareIt)
 ```
 
@@ -74,10 +76,6 @@ rdd.map(squareIt)
 7. and more
 
 * Lazy Evaluation!!!
-
-***
-
-## Lecture 12
 
 ***
 
