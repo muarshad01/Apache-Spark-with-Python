@@ -4,7 +4,7 @@
 
 * Deprecate Python2 -> `Python3`
 * Deprecate old MLLib (based on RDD interface)
-    * DataFrame / DataSet based
+    * `DataFrame` / DataSet based
 
 ### Faster & Better Performance
 
