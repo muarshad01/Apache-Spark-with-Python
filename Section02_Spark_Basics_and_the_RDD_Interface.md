@@ -118,7 +118,8 @@ def parseLine(line):
 lines = sc.textFile('/Users/marshad/Desktop/SparkCourse/data/fakefriends.csv')
 # passing parseLine function as a parameter
 rdd = lines.map(parseLine)
-totalsByAge = rdd.mapValues(lambda x: (x, 1)).reduceByKey(lambda x, y: (x[0] + y[0], x[1] + y[1]))
+totalsByAge = rdd.mapValues(lambda x: (x, 1)) \
+		 .reduceByKey(lambda x, y: (x[0] + y[0], x[1] + y[1]))
 averageByAge = totalByAge.mapValues(lambda x: x[0] / x[1])
 results = averageByAge.collect()
 for result in results:
