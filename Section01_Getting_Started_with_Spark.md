@@ -48,7 +48,9 @@ $
 
 ***
 
-## Lecture 07
+## Lecture 07 - Alternate MovieLens download location
+
+* http://media.sundog-soft.com/es/ml-100k.zip
 
 ***
 
