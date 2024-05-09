@@ -56,6 +56,14 @@ $
 
 ## Lecture 08
 
+* https://grouplens.org/
+* https://movielens.org/
+* 
+
+***
+
+## Lecture 09 - [Activity] Run your first Spark program! Ratings histogram example.
+
 ```python
 from pyspark import SparkConf, SparkContext
 import collections
@@ -73,8 +81,6 @@ for key, value in sortedResults.items():
 ```
 
 ***
-
-## Lecture 09
 
 ### Deprecate
 
