@@ -54,11 +54,10 @@ $
 
 ***
 
-## Lecture 08
+## Lecture 08 - [Activity] Installing the MovieLens Movie Rating Dataset
 
 * https://grouplens.org/
 * https://movielens.org/
-* 
 
 ***
 
