@@ -35,6 +35,8 @@ $ quit()
 
 ## Lecture 06
 
+* https://www.sundog-education.com/spark-python/
+
 ***
 
 ## Lecture 07
