@@ -7,3 +7,13 @@
 * [Section 05: Running Sprak on a Cluster](https://github.com/muarshad01/Apache-Spark-with-Python/blob/main/Section05_Running_Sprak_on_a_Cluster.md)
 * [Section 06: Machine Learning with Spark ML](https://github.com/muarshad01/Apache-Spark-with-Python/blob/main/Section06_Machine_Learning_with_Spark_ML.md)
 * [Section 07: Spark Streaming, Structured Streaming, and GraphX](https://github.com/muarshad01/Apache-Spark-with-Python/blob/main/Section07_Spark_Streaming_Structured_Streaming_and_GraphX.md)
+
+***
+
+## PATH SetUp
+```
+$ vim ~/.bash_profile
+export SPARK_HOME=/opt/homebrew/Cellar/apache-spark/3.5.1/libexec
+export PATH=$PATH:SPARK_HOME/bin
+source ~/.bash_profile
+```
