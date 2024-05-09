@@ -105,7 +105,7 @@ rdd.map(squareIt)
 
 ***
 
-#### File `friends-by-age.py`
+* File `friends-by-age.py`
 ```python
 from pyspark import SparkConf, SparkContext
 
