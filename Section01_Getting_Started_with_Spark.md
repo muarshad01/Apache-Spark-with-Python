@@ -38,14 +38,20 @@ $
 
 * https://www.sundog-education.com/spark-python/
 
-  ```python
-  $ cd /opt/homebrew/Cellar/apache-spark/3.5.1
-  $ pyspark
-  >>> rdd = sc.textFile('README.md')
-  >>> rdd.count()
-  >>> quit()
-  ```
-
+```python
+$ cd /opt/homebrew/Cellar/apache-spark/3.5.1
+$ pyspark
+>>> rdd = sc.textFile('README.md')
+>>> rdd.count()
+>>> quit()
+```
+### PATH SetUP
+```
+$ vim ~/.bash_profile
+export SPARK_HOME=/opt/homebrew/Cellar/apache-spark/3.5.1/libexec
+export PATH=$PATH:SPARK_HOME/bin
+source ~/.bash_profile
+```
 ***
 
 ## Lecture 07 - Alternate MovieLens download location
