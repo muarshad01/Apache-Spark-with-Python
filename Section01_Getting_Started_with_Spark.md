@@ -22,7 +22,7 @@
 
 ***
 
-## Lecture 05
+## Lecture 05 - [Activity] Getting Set Up: Installing Python, a JDK, Spark, and its Dependencies.
 ```python
 $ cd /usr/local/Cellar/apache-spark/3.3.0/bin
 $ pyspark
