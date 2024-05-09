@@ -83,12 +83,12 @@ rdd.map(squareIt)
 
 ***
 
-## Lecture 14
+## Lecture 14 - `(Key, Value)` RDD's, and the Average Friends by Age Example
 
 * We can put complex structures like `(key, value)` pairs inside RDD. 
 	* Then we can treat it like a simple DB.
 
-### `(key, value)` RDDs
+#### `(key, value)` RDDs
 01. `rdd.reduceByKey(lambda x, y : x + y)`
 02. `GroupByKey()`
 03. `sortByKey()`
