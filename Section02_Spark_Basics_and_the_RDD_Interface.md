@@ -132,8 +132,8 @@ for result in results:
 
 *** 
 
-## Lecture 16
-
+## Lecture 16 - Filtering RDD's, and the Minimum Temperature by Location Example
+* `min-temperatures.py`
 ```python
 from pyspark import SparkConf, SparkContext
 
@@ -142,12 +142,13 @@ sc = SparkContext(conf = conf)
 
 def parseLine(line):
 	fields = line.split(',')
-   	stationID = fields[0]
-   	entryType = fields[2]
-   	temperature = float(fields[3])*0.1*(9.0 / 5.0) + 32.0
+	stationID = fields[0]
+	entryType = fields[2]
+   	temperature = float(fields[3]) * 0.1 * (9.0 / 5.0) + 32.0
    	return (stationID, entryType, temperature)
 
-lines = sc.textFile("/Users/marshad/Desktop/SparkCourse/1800.csv")
+lines = sc.textFile('/Users/marshad/Desktop/SparkCourse/data/1800.csv')
+# passing parseLine function as a parameter
 parsedLines = lines.map(parseLine)
 minTemps = parsedLines.filter(lambda x: "TMIN" in x[1])
 stationTemps = minTemps.map(lambda x: (x[0], x[2]))
