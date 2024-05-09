@@ -85,27 +85,3 @@ for key, value in sortedResults.items():
 ```
 
 ***
-
-### Deprecate
-
-* Deprecate Python2 --> Python3
-* Deprecate old MLLib (based on RDD interface)
-    * DataFrame / DataSet based
-
-### Faster & Better Performance
-
-* `Spark3` versus `Sprak2` 
-	* 17 times faster than Spark2
-	* Adaptive execution
-	* Dynamic-partition pruning
-
-* Better k8s Integration
-	* Dynamic scaling
-* Deep Learning
-	* Take advantage of GPUs clusters `MLSpark` / `TensorFlow`
-* SparkGraph
-	* Cypher query language (property graph model)
-* Data Lake ACID support `DeltaLake`
-* Binary File support
-
-***
