@@ -37,6 +37,14 @@ $ quit()
 
 * https://www.sundog-education.com/spark-python/
 
+  ```python
+  $ cd /opt/homebrew/Cellar/apache-spark/3.5.1
+  $ pyspark
+  >>> rdd = sc.textFile('README.md')
+  >>> rdd.count()
+  >>> quit()
+  ```
+
 ***
 
 ## Lecture 07
