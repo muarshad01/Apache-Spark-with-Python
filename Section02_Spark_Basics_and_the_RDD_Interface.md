@@ -24,8 +24,6 @@
 
 ***
 
-***
-
 ## Lecture 11
 
 * Resilient Distributed Dataset (`RDD`) object
