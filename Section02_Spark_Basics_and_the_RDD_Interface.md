@@ -34,7 +34,7 @@
 ***
 
 ## Lecture 12
-* Resilient Distributed Dataset (`RDD`) object
+* `Resilient Distributed Dataset (RDD)` object
 * Developer uses RDD object for data manipulation
 * The Spark shell creates a `sc = SparkContext()` object
 ```
