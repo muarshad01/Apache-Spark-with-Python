@@ -133,7 +133,7 @@ for result in results:
 *** 
 
 ## Lecture 16 - Filtering RDD's, and the Minimum Temperature by Location Example
-* `min-temperatures.py`
+* File `min-temperatures.py`
 ```python
 from pyspark import SparkConf, SparkContext
 
