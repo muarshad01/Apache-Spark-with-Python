@@ -28,23 +28,29 @@
 
 * Resilient Distributed Dataset (`RDD`) object
 * Developer uses RDD object for data manipulation
-
-* The Spark shell creates a "`sc = SparkContext()` object for you
+* Spark Core
+	* Spark Streaming
+	* Spark SQL
+	* MLLib
+	* GraphX
+* The Spark shell creates a `sc = SparkContext()` object
 ```
 sc = SparkContext(conf = conf)
 ```
 
 ### RDD operations
-
 1. `map()`
 2. `flatMap()`  # multiple results per original entry
-3. `filter()`
-4. `distinct()`
+#### Select 
+3. `distinct()`
+4. `filter()`
 5. `sample()`
-6. `union()`
-7. `intersection()`
-8. `subtract()`
-9. `cartesian()`
+#### Join
+6. `cartesian()`
+7. `union()`
+8. `intersection()`
+#### Having
+9. `subtract()`
 
 ### MAP Example
 
