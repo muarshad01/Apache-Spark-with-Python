@@ -69,17 +69,17 @@ $ spark-submit ratings-counter.py
 ```
 
 ```python
-from pyspark import SparkConf, SparkContext
 import collections
+from pyspark import SparkConf, SparkContext
 
-conf = SparkConf().setMaster("local").setAppName("RatingHistogram")
+conf = SparkConf().setMaster('local').setAppName('RatingHistogram')
 sc = SparkContext(conf = conf)
 
-lines = sc.textFile("/Users/marshad/Desktop/SparkCourse/data/ml-100k/u.data")
+lines = sc.textFile('/Users/marshad/Desktop/SparkCourse/data/ml-100k/u.data')
 ratings = lines.map(lambda x: x.split()[2])
 result = ratings.countByValue()
 
-soertedResults = collections.OrderedDict(sorted(result.items()))
+sortedResults = collections.OrderedDict(sorted(result.items()))
 for key, value in sortedResults.items():
 	print("%s, %i" % (key, value))
 ```
