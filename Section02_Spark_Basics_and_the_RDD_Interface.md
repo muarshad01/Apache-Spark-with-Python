@@ -306,21 +306,6 @@ for result in results:
 	print(result)
 ```
 
-* RDD -> DataFrame Object
-
-* DataFrames (like Big Database table):
-	* Contain ROW objets
-	* Can run SQL queries
-	* Can have a schema
-	* Read / Write to JSON, Hive, parquet, ...
-	* Communicate with JDBC / ODBC, Tableau...
-
-### SparkSession vs SparkContext
-
-***
-
-## Lecture 23
-
 ***
 
 ## Lecture 24
