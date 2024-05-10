@@ -282,7 +282,7 @@ for result in results:
 
 ***
 
-## Lecture 23. [Excercise] Check your Results, and Now Sort them by Total Amount Spent.
+## Lecture 23 - [Excercise] Check your Results, and Now Sort them by Total Amount Spent.
 
 * File `total-spent-by-customer.py`
 
