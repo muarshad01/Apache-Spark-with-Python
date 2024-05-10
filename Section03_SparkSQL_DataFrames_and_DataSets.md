@@ -84,9 +84,6 @@ spark.stop()
 
 ***
 
-
-***
-
 ## Lecture 28 - [Exercise] Friends by Age, with DataFrames
 
 ```python
