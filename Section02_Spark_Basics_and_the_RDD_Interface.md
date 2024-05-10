@@ -166,8 +166,10 @@ for result in results:
 ***
 
 ## Lecture 18 - [Activity] Running the Maximum Temperature by Location Example
+
 * File `max-temperatures.py`
-```
+
+```python
 from pyspark import SparkConf, SparkContext
 
 conf = SparkConf().setMaster("local").setAppName("MaxTemperatures")
@@ -195,6 +197,7 @@ for result in results:
 ***
 
 ## Lecture 19 - [Activity] Counting Word Occurrences using `flatMap()`
+
 * `map()` versue (1-1 RDD) <--> 1-1 versus 1-many RDD
 
 * File `word-count.py`
@@ -217,6 +220,7 @@ for word, count in wordCounts.items():
 ***
 
 ## Lecture 20 - [Activity] Improving the Word Count Script with Regular Expressions
+
 * File `word-count-better.py`
   
 ```python
