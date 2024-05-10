@@ -1,8 +1,8 @@
 ## Lecture 25 - Introducing SparkSQL
 
 * `SparkSQL`
-	* `DataFrames` insted of `RDD`:
-		* Set of `Row` objets
+	* `DataFrames` insted of `RDDs`:
+		* Set/`DataSet` of `Row` objets
 		* Can have a `Schema`
    		* Allow running `SQL queries`
 		* Read / Write to JSON, Hive, parquet, CSV, ...
