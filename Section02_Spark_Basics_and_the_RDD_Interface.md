@@ -251,7 +251,7 @@ for result in results:
 ***
 
 ## Lecture 21 - [Activity] Sorting the Word Count Results
-* File ``
+* File `word-count-better-sorted.py`
 ```python
 import re
 from pyspark import SparkConf, SparkContext
