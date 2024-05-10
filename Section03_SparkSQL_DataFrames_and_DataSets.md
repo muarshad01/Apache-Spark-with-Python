@@ -35,8 +35,7 @@ lines = spark.sparkContext.textFile('/Users/marshad/Desktop/SparkCourse/data/fak
 # pass mapper function as a parameter
 people = lines.map(mapper)
 
-# Convert 'people' rdd into a DataFrame (Set of Row objects)
-# Infer the scheme
+# Convert 'people' rdd into a DataFrame (Set of Row objects), infer the Schema
 schemaPeople = spark.createDataFrame(people).cache()
 schemaPeople.createOrReplaceTempView("people")
 
