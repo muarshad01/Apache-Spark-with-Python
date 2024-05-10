@@ -2,13 +2,11 @@
 
 * `SparkSQL`
 	* `DataFrames` insted of `RDDs`:
-		* Set/`DataSet` of `Row` objets
+		* `DataSet(Set)` of `Row` objets
 		* Can have a `Schema`
    		* Allow running `SQL queries`
 		* Read / Write to JSON, Hive, parquet, CSV, ...
 		* Communicate with JDBC / ODBC, Tableau, ...
-	* `DateSet`
- 		* ...
 * `SparkSession` versus `SparkContext`
 
 ***
