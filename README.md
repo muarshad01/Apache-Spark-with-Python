@@ -19,9 +19,9 @@ export PATH=$PATH:SPARK_HOME/bin
 source ~/.bash_profile
 ```
 
-### Run the code
+### Run the Code
 
 ```bash
-$ /Users/marshad/Desktop/SparkCourse/code
+$ cd /Users/marshad/Desktop/SparkCourse/code
 $ spark-submit ratings-counter.py
 ```
