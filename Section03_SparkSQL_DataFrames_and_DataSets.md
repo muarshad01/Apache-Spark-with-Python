@@ -18,6 +18,7 @@ from pyspark.sql import Row
 # Create a SparkSession
 spark = SparkSession.builder.appName("SparkSQL").getOrCreate()
 
+# mapper function returning `Row(ID, name, age, numFriends)` object
 def mapper(line):
 	fields = line.split(',')
     	return Row(	ID=int(fields[0]), \
