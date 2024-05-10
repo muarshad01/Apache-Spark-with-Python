@@ -213,31 +213,33 @@ spark.stop()
 ***
 
 ## Lecture 33 - Exercise Solution: Total Spent by Customer, with DataFrames
+* File `total-spent-by-customer-sorted-dataframe.py`
 
 ```python
 from pyspark.sql import SparkSession
 from pyspark.sql import functions as func
-from pyspark.sql.types import StructType, StructField, IntegerType, LongType
+from pyspark.sql.types import StructType, StructField, IntegerType, FloatType 
 
-spark = SparkSession.builder.appName("PopularMovies").getOrCreate()
+spark = SparkSession.builder.appName("TotalSpentByCustomer").master("local[*]").getOrCreate()
 
-schema = StructType([ \
-                        StructField("userID", IntegerType(), True), \
-                        StructField("movieID", IntegerType(), True), \
-                        StructField("rating", IntegerType(), True), \
-                        StructField("timestampuserID", LongType(), True)
-                ])
+# create the schema when reading customer-orders
+customerOrderSchema = StructType([\
+                                    StructField("cust_id", IntegerType(), True),\
+                                    StructField("item_id", IntegerType(), True),\
+                                    StructField("amount_spent", FloatType(), True)
+                                ])
 
-# Load up movie data as dataframe
-moviesDF = spark.read.option("sep", "\t").schema(schema).csv("/Users/marshad/Desktop/SparkCourse/data/ml-100k/u.data")
+# Load up the data into spark
+customerDF = spark.read.schema(customerOrderSchema) \
+                .csv('/Users/marshad/Desktop/SparkCourse/data/customer-orders.csv')
 
-# some SQL-style magic to sort all movies by popularity in one line!
-topMovieIDs = moviesDF.groupBy("movieID").count().orderBy(func.desc("count"))
+totalByCustomer = customerDF.groupBy("cust_id")\
+        .agg(func.round(func.sum("amount_spent"), 2).alias("total_spent"))
 
-# Grab the top 10
-topMovieIDs.show(10)
+totalByCustomerSorted = totalByCustomer.sort("total_spent")
 
-# Stop the session
+totalByCustomerSorted.show(totalByCustomerSorted.count())
+
 spark.stop()
 ```
 
