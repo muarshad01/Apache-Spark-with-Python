@@ -130,33 +130,30 @@ spark.stop()
 
 ## Lecture 30 - [Activity] Word Count, with DataFrames
 
-***
-
-
 ```python
-from pyspark.sql import SparkSession
-from pyspark.sql import functions as func
-from pyspark.sql.types import StructType, StructField, IntegerType, FloatType 
+import re
+from pyspark import SparkConf, SparkContext
 
-spark = SparkSession.builder.appName("TotalSpentByCustomer").master("local[*]").getOrCreate()
+conf = SparkConf().setMaster("local").setAppName("WordCount")
+sc = SparkContext(conf = conf)
 
-# create the schema when reading customer-orders
-customerOrderSchema = StructType([\
-                                    StructField("cust_id", IntegerType(), True),
-                                    StructField("item_id", IntegerType(), True),
-                                    StructField("amount_spent", FloatType(), True)
-                                ])
+# 
+def normalizeWords(text):
+	return re.compile(r'\W+', re.UNICODE).split(text.lower());
 
-# Load up the data into spark
-customerDF = spark.read.schema(customerOrderSchema).csv("/Users/marshad/Desktop/SparkCourse/data/customer-orders.csv")
+input = sc.textFile("/Users/marshad/Desktop/SparkCourse/data/Book")
+# passing normalizeWords function as a parameter
+words = input.flatMap(normalizeWords)
 
-totalByCustomer = customerDF.groupBy("cust_id").agg(func.round(func.sum("amount_spent"), 2).alias("total_spent"))
+wordCounts = words.map(lambda x: (x, 1)).reduceByKey(lambda x, y: x+y)
+wordCountsSorted = wordCounts.map(lambda x: (x[1], x[0])).sortByKey()
+results = wordCountsSorted.collect()
 
-totalByCustomerSorted = totalByCustomer.sort("total_spent")
-
-totalByCustomerSorted.show(totalByCustomerSorted.count())
-
-spark.stop()
+for result in results:
+   count = str(result[0])
+   word = result[1].encode('ascii', 'ignore')
+   if (word):
+      print(word.decode() + ":\t\t" + count)
 ```
 
 ***
