@@ -21,7 +21,7 @@ spark = SparkSession.builder.appName("SparkSQL").getOrCreate()
 # mapper function returning `Row(ID, name, age, numFriends)` object
 def mapper(line):
 	fields = line.split(',')
-    	return Row(	ID=int(fields[0]), \
+	return Row(	ID=int(fields[0]), \
 			name=str(fields[1].encode("utf-8")), \
         		age=int(fields[2]), \
 			numFriends=int(fields[3]))
