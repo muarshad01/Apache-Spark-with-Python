@@ -1,14 +1,14 @@
 ## Lecture 25 - Introducing SparkSQL
 
-* RDD -> DataFrame Object
-
-* DataFrames (like Big Database table):
-	* Contain ROW objets
-	* Can run SQL queries
-	* Can have a schema
-	* Read / Write to JSON, Hive, parquet, ...
-	* Communicate with JDBC / ODBC, Tableau...
-
+* Spark SQOL
+	* DataFrames (like Big Database table):
+		* Contain ROW objets
+		* Can run SQL queries
+		* Can have a schema
+		* Read / Write to JSON, Hive, parquet, CSV, ...
+		* Communicate with JDBC / ODBC, Tableau...
+	* DateSet
+ 		* ... 
 ***
 
 ```python
