@@ -13,6 +13,8 @@
 
 ***
 
+## Lecture 26 - [Activity] Executing SQL commands and SQL-style functions on a DataFrame
+
 * File `spark-submit spark-sql.py`
 ```python
 from pyspark.sql import SparkSession
@@ -53,7 +55,7 @@ spark.stop()
 
 ***
 
-## Lecture 26 - [Activity] Executing SQL commands and SQL-style functions on a DataFrame
+## Lecture 27 - Using DataFrames instead of RDD's
 
 ```python
 from pyspark.sql import SparkSession
@@ -83,7 +85,6 @@ spark.stop()
 
 ***
 
-## Lecture 27 - Using DataFrames instead of RDD's
 
 ***
 
