@@ -1,5 +1,16 @@
 ## Lecture 25
 
+* RDD -> DataFrame Object
+
+* DataFrames (like Big Database table):
+	* Contain ROW objets
+	* Can run SQL queries
+	* Can have a schema
+	* Read / Write to JSON, Hive, parquet, ...
+	* Communicate with JDBC / ODBC, Tableau...
+
+***
+
 ```python
 from pyspark.sql import SparkSession
 from pyspark.sql import Row
