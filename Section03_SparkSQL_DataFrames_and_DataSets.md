@@ -88,6 +88,10 @@ spark.stop()
 
 ## Lecture 28 - [Exercise] Friends by Age, with DataFrames
 
+***
+
+## Lecture 29 - Exercise Solution: Friends by Age, with DataFrames
+
 * File `friends-by-age-dataframe.py`
 
 ```python
@@ -124,7 +128,8 @@ spark.stop()
 
 ***
 
-## Lecture 29 - Exercise Solution: Friends by Age, with DataFrames
+## Lecture 30 - [Activity] Word Count, with DataFrames
+
 
 ```python
 from pyspark.sql import SparkSession
@@ -170,7 +175,6 @@ spark.stop()
 
 ***
 
-## Lecture 30 - [Activity] Word Count, with DataFrames
 
 ```python
 from pyspark.sql import SparkSession
