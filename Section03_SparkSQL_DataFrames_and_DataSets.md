@@ -88,6 +88,8 @@ spark.stop()
 
 ## Lecture 28 - [Exercise] Friends by Age, with DataFrames
 
+* File `friends-by-age-dataframe.py`
+
 ```python
 from pyspark.sql import SparkSession
 from pyspark.sql import Row
@@ -95,7 +97,10 @@ from pyspark.sql import functions as func
 
 spark = SparkSession.builder.appName("SparkSQL").getOrCreate()
 
-lines = spark.read.option("header", "true").option("inferschema", "true").csv("/Users/marshad/Desktop/SparkCourse/data/fakefriends-header.csv")
+# DataFrame lines
+lines = spark.read.option("header", "true") \
+			.option("inferSchema", "true") \
+			.csv("/Users/marshad/Desktop/SparkCourse/data/fakefriends-header.csv")
 
 # select only age and numFriends columns
 friendsByAge = lines.select("age", "friends")
@@ -109,8 +114,10 @@ friendsByAge.groupBy("age").avg("friends").sort("age").show()
 # formatted more nicely
 friendsByAge.groupBy("age").agg(func.round(func.avg("friends"), 2)).sort("age").show()
 
-print("Make everyone 10 years older:")
-friendsByAge.groupBy("age").agg(func.round(func.avg("friends"), 2).alias("friends_avg")).sort("age").show()
+# With a custom column name
+friendsByAge.groupBy("age") \
+	.agg(func.round(func.avg("friends"), 2) \
+	.alias("friends_avg")).sort("age").show()
 
 spark.stop()
 ```
