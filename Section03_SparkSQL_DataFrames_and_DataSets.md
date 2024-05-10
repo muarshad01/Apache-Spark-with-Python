@@ -2,7 +2,7 @@
 
 * `SparkSQL`
 	* `DataFrames` (like Big Database table):
-		* Contain ROW objets
+		* Contain `Row` objets
 		* Can run SQL queries
 		* Can have a schema
 		* Read / Write to JSON, Hive, parquet, CSV, ...
@@ -19,11 +19,12 @@ from pyspark.sql import Row
 spark = SparkSession.builder.appName("SparkSQL").getOrCreate()
 
 def mapper(line):
-    fields = line.split(',')
-    return Row(ID=int(fields[0]), name=str(fields[1].encode("utf-8")), \
-        age=int(fields[2]), numFriends=int(fields[3]))
+	fields = line.split(',')
+    	return Row(ID=int(fields[0]), name=str(fields[1].encode("utf-8")), \
+        		age=int(fields[2]), numFriends=int(fields[3]))
 
-lines = spark.sparkContext.textFile("/Users/marshad/Desktop/SparkCourse/data/fakefriends.csv")
+lines = spark.sparkContext.textFile('/Users/marshad/Desktop/SparkCourse/data/fakefriends.csv')
+# pass mapper function as a parameter
 people = lines.map(mapper)
 
 # Infer the schema, and register the DataFrame as a table.
@@ -35,7 +36,7 @@ teenagers = spark.sql("SELECT * FROM people WHERE age >= 13 AND age <= 19")
 
 # The results of SQL queries are RDDs and support all the normal RDD operations.
 for teen in teenagers.collect():
-    print(teen)
+	print(teen)
 
 # We can also use functions instead of SQL queries:
 schemaPeople.groupBy("age").count().orderBy("age").show()
