@@ -1,4 +1,4 @@
-## Lecture 34
+## Lecture 34 - [Activity] Find the Most Popular Movie
 
 * Join: Attach movieNames with movieIDs
 * Dictionary loaded in driver program
@@ -58,7 +58,7 @@ spark.stop()
 
 ***
 
-## Lecture 35
+## Lecture 35 -- [Activity] Use Broadcast Variables to Display Movie Names Instead of ID Numbers
 
 ```python
 from pyspark.sql import SparkSession
@@ -86,50 +86,45 @@ mostPopularName = names.filter(func.col("id") == mostPopular[0]).select("name").
 
 print(mostPopulrName[0] + " is the most popular superhero with " + str(mostPopular[1]) + " co-appearances.")
 ```
+***
+
+## Lecture 36 - Find the Most Popular Superhero in a Social Graph
 
 ***
 
-## Lecture 35
+## Lecture 37 - [Activity] Run the Script - Discover Who the Most Popular Superhero is!
 
 ***
 
-## Lecture 36
+## Lecture 38 - [Exercise] Find the Most Obscure Superheroes
 
 ***
 
-## Lecture 37
+## Lecture 39 - Exercise Solution: Most Obscure Superheroes
 
 ***
 
-## Lecture 38
-
-***
-
-## Lecture 39
-
-***
-
-## Lecture 40
+## Lecture 40 - Superhero Degrees of Separation: Introducing Breadth-First Search
 * An accumulator allows many executors to increment a shared variable
 
 ***
 
-## Lecture 41
+## Lecture 41 - Superhero Degrees of Separation: Accumulators, and Implementing BFS in Spark
 
 ***
 
-## Lecture 42
+## Lecture 42 - [Activity] Superhero Degrees of Separation: Review the Code and Run it
 
 ***
 
-## Lecture 43
+## Lecture 43 - Item-Based Collaborative Filtering in Spark, cache(), and persist()
 
 ***
 
-## Lecture 44
+## Lecture 44 - [Activity] Running the Similar Movies Script using Spark's Cluster Manager
 
 ***
 
-## Lecture 45
+## Lecture 45 - [Exercise] Improve the Quality of Similar Movies
 
 ***
