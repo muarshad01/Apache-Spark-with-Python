@@ -56,12 +56,14 @@ spark.stop()
 
 ## Lecture 27 - Using DataFrames instead of RDD's
 
+* File `spark-sql-dataframe.sql`
 ```python
 from pyspark.sql import SparkSession
 
 spark = SparkSession.builder.appName("SparkSQL").getOrCreate()
 
-people = spark.read.option("header", "true").option("inferschema", "true") \
+# We've a header row; Infer the Schema
+people = spark.read.option("header", "true").option("inferSchema", "true") \
     .csv("/Users/marshad/Desktop/SparkCourse/data/fakefriends-header.csv")
 
 print("Here is our inferred schema:")
