@@ -12,7 +12,7 @@ from pyspark.sql.types import StructType, StructField, IntegerType, LongType
 import codecs
 
 def loadMovieNames():
-    movieNames = {}
+movieNames = {}
     # Change this to PATH to your u.item file:
     with codecs.open("/Users/marshad/Desktop/SparkCourse/data/ml-100k/u.item", "r", encoding='ISO-8859-1', errors='ignore') as f:
         for line in f:
@@ -60,6 +60,10 @@ spark.stop()
 
 ## Lecture 35 -- [Activity] Use Broadcast Variables to Display Movie Names Instead of ID Numbers
 
+***
+
+## Lecture 36 - Find the Most Popular Superhero in a Social Graph
+
 ```python
 from pyspark.sql import SparkSession
 from pyspark.sql import functions as func
@@ -86,9 +90,7 @@ mostPopularName = names.filter(func.col("id") == mostPopular[0]).select("name").
 
 print(mostPopulrName[0] + " is the most popular superhero with " + str(mostPopular[1]) + " co-appearances.")
 ```
-***
 
-## Lecture 36 - Find the Most Popular Superhero in a Social Graph
 
 ***
 
