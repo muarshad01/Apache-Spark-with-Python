@@ -10,8 +10,10 @@
 	* `DateSet`
  		* ...
    * `SparkSession` versus `SparkContext`
+
 ***
 
+* File `spark-submit spark-sql.py`
 ```python
 from pyspark.sql import SparkSession
 from pyspark.sql import Row
