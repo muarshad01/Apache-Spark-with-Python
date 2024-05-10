@@ -1,7 +1,7 @@
 ## Lecture 25 - Introducing SparkSQL
 
 * `SparkSQL`
-	* `DataFrames`:
+	* `DataFrames` insted of `RDD`:
 		* Set of `Row` objets
 		* Can have a `Schema`
    		* Allow running `SQL queries`
@@ -9,7 +9,7 @@
 		* Communicate with JDBC / ODBC, Tableau, ...
 	* `DateSet`
  		* ...
-   * `SparkSession` versus `SparkContext`
+* `SparkSession` versus `SparkContext`
 
 ***
 
