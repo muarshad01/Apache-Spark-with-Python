@@ -1,8 +1,8 @@
 ## Lecture 25 - Introducing SparkSQL
 
 * `SparkSQL`
-	* `DataFrames` (Set of `Row` objects):
-		* Contain `Row` objets
+	* `DataFrames`:
+		* Set of `Row` objets
 		* Can run SQL queries
 		* Can have a schema
 		* Read / Write to JSON, Hive, parquet, CSV, ...
