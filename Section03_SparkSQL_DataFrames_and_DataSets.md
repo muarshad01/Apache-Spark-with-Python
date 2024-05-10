@@ -3,11 +3,11 @@
 * `SparkSQL`
 	* `DataFrames`:
 		* Set of `Row` objets
-		* Can run SQL queries
-		* Can have a schema
+		* Can have a `Schema`
+   		* Allow running `SQL queries`
 		* Read / Write to JSON, Hive, parquet, CSV, ...
-		* Communicate with JDBC / ODBC, Tableau...
-	* DateSet
+		* Communicate with JDBC / ODBC, Tableau, ...
+	* `DateSet`
  		* ...
    * `SparkSession` versus `SparkContext`
 ***
