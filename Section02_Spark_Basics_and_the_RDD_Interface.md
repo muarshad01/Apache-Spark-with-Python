@@ -278,7 +278,13 @@ for result in results:
 
 ***
 
-## Lecture 22
+## Lecture 22 - [Exercise] Find the Total Amount Spent by Customer
+
+***
+
+## Lecture 23. [Excercise] Check your Results, and Now Sort them by Total Amount Spent.
+
+* File `total-spent-by-customer.py`
 
 ```python
 from pyspark import SparkConf, SparkContext
@@ -288,11 +294,12 @@ sc = SparkContext(conf = conf)
 
 def extractCustomerPricePairs(line):
 	fields = line.split(',')
-   	return (int(fields[0]), float(fields[2]))
+	return (int(fields[0]), float(fields[2]))
 
-input = sc.textFile("/Users/marshad/Desktop/SparkCourse/data/customer-orders.csv")
+input = sc.textFile('/Users/marshad/Desktop/SparkCourse/data/customer-orders.csv')
+# Pass function as a parameter
 mappedInput = input.map(extractCustomerPricePairs)
-totalByCustomer = mappedInput.reduceByKey(lambda x, y: x + y)
+totalByCustomer = mappedInput.reduceByKey(lambda x, y : x + y)
 
 results = totalByCustomer.collect()
 for result in results:
