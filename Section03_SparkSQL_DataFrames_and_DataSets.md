@@ -15,7 +15,7 @@
 
 ## Lecture 26 - [Activity] Executing SQL commands and SQL-style functions on a DataFrame
 
-* File `spark-submit spark-sql.py`
+* File `spark-sql.py`
 ```python
 from pyspark.sql import SparkSession
 from pyspark.sql import Row
