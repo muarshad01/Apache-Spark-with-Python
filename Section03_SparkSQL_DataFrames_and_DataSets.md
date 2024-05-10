@@ -130,6 +130,8 @@ spark.stop()
 
 ## Lecture 30 - [Activity] Word Count, with DataFrames
 
+* File `spark-submit word-count-better-sorted.py`
+
 ```python
 import re
 from pyspark import SparkConf, SparkContext
