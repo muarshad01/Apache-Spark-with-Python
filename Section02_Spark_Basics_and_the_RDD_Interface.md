@@ -194,30 +194,25 @@ for result in results:
 
 ***
 
-* `map()` 
-    * (1-1 RDD)
-* `flatMap()` 
-    * (1-many RDD)
+## Lecture 19 - [Activity] Counting Word Occurrences using `flatMap()`
+* `map()` versue (1-1 RDD) <--> 1-1 versus 1-many RDD
 
+* File `word-count.py`
 ```python
 from pyspark import SparkConf, SparkContext
 
 conf = SparkConf().setMaster("local").setAppName("WordCount")
 sc = SparkContext(conf = conf)
          
-input = sc.textFile("/Users/marshad/Desktop/SparkCourse/data/Book")
+input = sc.textFile('/Users/marshad/Desktop/SparkCourse/data/Book')
 words = input.flatMap(lambda x: x.split())
 wordCounts = words.countByValue()
 
 for word, count in wordCounts.items():
 	cleanWord = word.encode('ascii', 'ignore')
    	if (cleanWord):
-      		print(cleanWord.decode() + " " + str(count))
+		print(cleanWord.decode() + " " + str(count))
 ```
-
-***
-
-## Lecture 19
 
 ***
 
