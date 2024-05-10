@@ -213,6 +213,7 @@ spark.stop()
 ***
 
 ## Lecture 33 - Exercise Solution: Total Spent by Customer, with DataFrames
+
 * File `total-spent-by-customer-sorted-dataframe.py`
 
 ```python
@@ -229,7 +230,7 @@ customerOrderSchema = StructType([\
                                     StructField("amount_spent", FloatType(), True)
                                 ])
 
-# Load up the data into spark
+# Load up the data into customerDF DataFrame
 customerDF = spark.read.schema(customerOrderSchema) \
                 .csv('/Users/marshad/Desktop/SparkCourse/data/customer-orders.csv')
 
