@@ -1,7 +1,7 @@
 ## Lecture 25 - Introducing SparkSQL
 
-* Spark SQOL
-	* DataFrames (like Big Database table):
+* `SparkSQL`
+	* `DataFrames` (like Big Database table):
 		* Contain ROW objets
 		* Can run SQL queries
 		* Can have a schema
