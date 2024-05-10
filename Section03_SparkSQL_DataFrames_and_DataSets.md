@@ -1,4 +1,4 @@
-## Lecture 25
+## Lecture 25 - Introducing SparkSQL
 
 * RDD -> DataFrame Object
 
@@ -45,7 +45,7 @@ spark.stop()
 
 ***
 
-## Lecture 26
+## Lecture 26 - [Activity] Executing SQL commands and SQL-style functions on a DataFrame
 
 ```python
 from pyspark.sql import SparkSession
@@ -75,11 +75,11 @@ spark.stop()
 
 ***
 
-## Lecture 27
+## Lecture 27 - Using DataFrames instead of RDD's
 
 ***
 
-## Lecture 28
+## Lecture 28 - [Exercise] Friends by Age, with DataFrames
 
 ```python
 from pyspark.sql import SparkSession
@@ -108,7 +108,9 @@ friendsByAge.groupBy("age").agg(func.round(func.avg("friends"), 2).alias("friend
 spark.stop()
 ```
 
-## Lecture 29
+***
+
+## Lecture 29 - Exercise Solution: Friends by Age, with DataFrames
 
 ```python
 from pyspark.sql import SparkSession
@@ -154,7 +156,7 @@ spark.stop()
 
 ***
 
-## Lecture 30
+## Lecture 30 - [Activity] Word Count, with DataFrames
 
 ```python
 from pyspark.sql import SparkSession
@@ -184,15 +186,15 @@ spark.stop()
 
 ***
 
-## Lecture 31
+## Lecture 31 - [Activity] Minimum Temperature, with DataFrames (using a custom schema)
 
 ***
 
-## Lecture 32
+## Lecture 32 - [Exercise] Implement Total Spent by Customer with DataFrames
 
 ***
 
-## Lecture 33
+## Lecture 33 - Exercise Solution: Total Spent by Customer, with DataFrames
 
 ```python
 from pyspark.sql import SparkSession
