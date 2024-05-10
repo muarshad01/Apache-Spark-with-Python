@@ -130,6 +130,40 @@ spark.stop()
 
 ## Lecture 30 - [Activity] Word Count, with DataFrames
 
+***
+
+
+```python
+from pyspark.sql import SparkSession
+from pyspark.sql import functions as func
+from pyspark.sql.types import StructType, StructField, IntegerType, FloatType 
+
+spark = SparkSession.builder.appName("TotalSpentByCustomer").master("local[*]").getOrCreate()
+
+# create the schema when reading customer-orders
+customerOrderSchema = StructType([\
+                                    StructField("cust_id", IntegerType(), True),
+                                    StructField("item_id", IntegerType(), True),
+                                    StructField("amount_spent", FloatType(), True)
+                                ])
+
+# Load up the data into spark
+customerDF = spark.read.schema(customerOrderSchema).csv("/Users/marshad/Desktop/SparkCourse/data/customer-orders.csv")
+
+totalByCustomer = customerDF.groupBy("cust_id").agg(func.round(func.sum("amount_spent"), 2).alias("total_spent"))
+
+totalByCustomerSorted = totalByCustomer.sort("total_spent")
+
+totalByCustomerSorted.show(totalByCustomerSorted.count())
+
+spark.stop()
+```
+
+***
+
+## Lecture 31 - [Activity] Minimum Temperature, with DataFrames (using a custom schema)
+
+* File `min-termperatures-dataframe.py`
 
 ```python
 from pyspark.sql import SparkSession
@@ -172,39 +206,6 @@ for result in results:
 
 spark.stop()
 ```
-
-***
-
-
-```python
-from pyspark.sql import SparkSession
-from pyspark.sql import functions as func
-from pyspark.sql.types import StructType, StructField, IntegerType, FloatType 
-
-spark = SparkSession.builder.appName("TotalSpentByCustomer").master("local[*]").getOrCreate()
-
-# create the schema when reading customer-orders
-customerOrderSchema = StructType([\
-                                    StructField("cust_id", IntegerType(), True),
-                                    StructField("item_id", IntegerType(), True),
-                                    StructField("amount_spent", FloatType(), True)
-                                ])
-
-# Load up the data into spark
-customerDF = spark.read.schema(customerOrderSchema).csv("/Users/marshad/Desktop/SparkCourse/data/customer-orders.csv")
-
-totalByCustomer = customerDF.groupBy("cust_id").agg(func.round(func.sum("amount_spent"), 2).alias("total_spent"))
-
-totalByCustomerSorted = totalByCustomer.sort("total_spent")
-
-totalByCustomerSorted.show(totalByCustomerSorted.count())
-
-spark.stop()
-```
-
-***
-
-## Lecture 31 - [Activity] Minimum Temperature, with DataFrames (using a custom schema)
 
 ***
 
