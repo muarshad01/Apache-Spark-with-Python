@@ -31,13 +31,6 @@ spark.stop()
 ## Lecture 35 -- [Activity] Use Broadcast Variables to Display Movie Names Instead of ID Numbers
 
 ```python
-# -*- coding: utf-8 -*-
-"""
-Created on Mon Sep  7 15:28:00 2020
-
-@author: Frank
-"""
-
 from pyspark.sql import SparkSession
 from pyspark.sql import functions as func
 from pyspark.sql.types import StructType, StructField, IntegerType, LongType
@@ -118,7 +111,6 @@ mostPopularName = names.filter(func.col("id") == mostPopular[0]).select("name").
 
 print(mostPopulrName[0] + " is the most popular superhero with " + str(mostPopular[1]) + " co-appearances.")
 ```
-
 
 ***
 
