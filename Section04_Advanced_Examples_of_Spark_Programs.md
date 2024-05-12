@@ -37,6 +37,10 @@ spark.stop()
 
 * File `popular-movies-nice-dataframe.py`
 
+* Broadcast objects to the executor, such that they're always there whenever needed
+* Just use `park.sparkContext.broadcast()` to ship off whatever you want
+* Then use the `.value()` to get the object back
+
 ```python
 from pyspark.sql import SparkSession
 from pyspark.sql import functions as func
