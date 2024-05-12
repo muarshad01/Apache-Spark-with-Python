@@ -322,6 +322,8 @@ for iteration in range(0, 10):
 ***
 
 ## Lecture 43 - Item-Based Collaborative Filtering in Spark, `cache()`, and `persist()`
+* `cache()` vs `persist()`
+    * Persist optionally lets you cache to disk instead of just memory, just in case a node fails or something
 
 ***
 
