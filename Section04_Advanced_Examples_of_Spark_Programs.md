@@ -93,7 +93,10 @@ spark.stop()
 ***
 
 ## Lecture 36 - Find the Most Popular Superhero in a Social Graph
-
+* File `Marvel-names.txt`
+    * `(id, name)`
+* File `Marvel-graph.txt`
+    * 
 ```python
 from pyspark.sql import SparkSession
 from pyspark.sql import functions as func
