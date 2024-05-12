@@ -1,5 +1,6 @@
 ## Lecture 34 - [Activity] Find the Most Popular Moviefrom pyspark.sql import SparkSession
 
+* `Row(User ID, Movie ID, Rating, Timestamp)`
 ```python
 from pyspark.sql import SparkSession
 from pyspark.sql import functions as func
