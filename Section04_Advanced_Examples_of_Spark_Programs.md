@@ -32,7 +32,7 @@ spark.stop()
 ***
 
 ## Lecture 35 -- [Activity] Use Broadcast Variables to Display Movie Names Instead of ID Numbers
-
+* File `popular-movies-nice-dataframe.py`
 ```python
 from pyspark.sql import SparkSession
 from pyspark.sql import functions as func
