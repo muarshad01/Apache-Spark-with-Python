@@ -114,8 +114,8 @@ name = spark.read.schema(schema).option("sep", " ").csv("/Users/marshad/Desktop/
 lines = spark.read.text("/Users/marshad/Desktop/SparkCourse/data/Marvel-graph.txt")
 
 connections = lines.withColumn("id", func.split(func.trim(func.col("value"), " ")[0] \
-.withColumn("connections", func.size(func.split(func.trim(func.col("value"), " ")) - 1) \
-.groupBy("id").agg(func.sum("connections").alias("connections"))
+                   .withColumn("connections", func.size(func.split(func.trim(func.col("value"), " ")) - 1) \
+                   .groupBy("id").agg(func.sum("connections").alias("connections"))
 
 mostPopular = connections.sort(func.col("connections").desc()).first()
 
