@@ -321,7 +321,7 @@ for iteration in range(0, 10):
 ```
 ***
 
-## Lecture 43 - Item-Based Collaborative Filtering in Spark, cache(), and persist()
+## Lecture 43 - Item-Based Collaborative Filtering in Spark, `cache()`, and `persist()`
 
 ***
 
