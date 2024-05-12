@@ -34,12 +34,11 @@ spark.stop()
 ***
 
 ## Lecture 35 -- [Activity] Use Broadcast Variables to Display Movie Names Instead of ID Numbers
-
-* File `popular-movies-nice-dataframe.py`
-
 * Broadcast objects to the executor, such that they're always there whenever needed
 * Just use `park.sparkContext.broadcast()` to ship off whatever you want
 * Then use the `.value()` to get the object back
+
+* File `popular-movies-nice-dataframe.py`
 
 ```python
 from pyspark.sql import SparkSession
