@@ -44,8 +44,7 @@ from pyspark.sql.types import StructType, StructField, IntegerType, LongType
 import codecs
 
 def loadMovieNames():
-    movieNames = {}      # Dictonary
-    # CHANGE THIS TO THE PATH TO YOUR u.ITEM FILE:
+    movieNames = {}            # movieNames Dictonary  
     with codecs.open('/Users/marshad/Desktop/SparkCourse/data/mk-100k/u.item', "r", encoding='ISO-8859-1',  errors='ignore') as f:
         for line in f:
             fields = line.split('|')
