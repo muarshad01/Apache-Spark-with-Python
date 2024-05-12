@@ -93,10 +93,16 @@ spark.stop()
 ***
 
 ## Lecture 36 - Find the Most Popular Superhero in a Social Graph
+
 * File `Marvel-names.txt`
     * `(id, name)`
 * File `Marvel-graph.txt`
     * xxx
+
+***
+
+## Lecture 37 - [Activity] Run the Script - Discover Who the Most Popular Superhero is!
+
 * File `most-popular-superhero-dataframe.py`
 ```python
 from pyspark.sql import SparkSession
@@ -126,10 +132,6 @@ mostPopularName = names.filter(func.col("id") == mostPopular[0]).select("name").
 
 print(mostPopulrName[0] + " is the most popular superhero with " + str(mostPopular[1]) + " co-appearances.")
 ```
-
-***
-
-## Lecture 37 - [Activity] Run the Script - Discover Who the Most Popular Superhero is!
 
 ***
 
