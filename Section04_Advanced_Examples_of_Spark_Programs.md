@@ -175,8 +175,8 @@ minConnectionsWithNames.select("name").show()
 
 ***
 
-## Lecture 40 - Superhero Degrees of Separation: Introducing Breadth-First Search
-* An accumulator allows many executors to increment a shared variable
+## Lecture 40 - Superhero Degrees of Separation: Introducing Breadth-First Search (BFS)
+* An `accumulator` allows many executors to increment a shared variable
 
 ***
 
