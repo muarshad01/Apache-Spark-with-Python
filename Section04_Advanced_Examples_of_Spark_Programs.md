@@ -1,6 +1,8 @@
 ## Lecture 34 - [Activity] Find the Most Popular Moviefrom pyspark.sql import SparkSession
+
 * `Row(User ID, Movie ID, Rating, Timestamp)`
 * File `popular-movies-dataframe.py`
+
 ```python
 from pyspark.sql import SparkSession
 from pyspark.sql import functions as func
@@ -32,7 +34,9 @@ spark.stop()
 ***
 
 ## Lecture 35 -- [Activity] Use Broadcast Variables to Display Movie Names Instead of ID Numbers
+
 * File `popular-movies-nice-dataframe.py`
+
 ```python
 from pyspark.sql import SparkSession
 from pyspark.sql import functions as func
@@ -40,7 +44,7 @@ from pyspark.sql.types import StructType, StructField, IntegerType, LongType
 import codecs
 
 def loadMovieNames():
-    movieNames = {}
+    movieNames = {}      # Dictonary
     # CHANGE THIS TO THE PATH TO YOUR u.ITEM FILE:
     with codecs.open("E:/SparkCourse/ml-100k/u.ITEM", "r", encoding='ISO-8859-1', errors='ignore') as f:
         for line in f:
