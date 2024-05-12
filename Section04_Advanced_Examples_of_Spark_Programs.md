@@ -96,7 +96,7 @@ spark.stop()
 * File `Marvel-names.txt`
     * `(id, name)`
 * File `Marvel-graph.txt`
-    *
+    * xxx
 * File `most-popular-superhero-dataframe.py`
 ```python
 from pyspark.sql import SparkSession
