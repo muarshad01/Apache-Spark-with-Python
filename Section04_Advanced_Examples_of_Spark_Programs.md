@@ -183,22 +183,22 @@ minConnectionsWithNames.select("name").show()
 ## Lecture 41 - Superhero Degrees of Separation: Accumulators, and Implementing BFS in Spark
 
 * Line - `(node, connectins, distance, COLOR)`
-    * Our, initial condition is node is `infinitely distant (9999)` and `white`
+    * Our, initial condition is node is `infinitely distant (9999)` and `white` meaning un-processed node.
     * `(node, connectins, 9999, WHITE)`
 ***
 
 ## Lecture 42 - [Activity] Superhero Degrees of Separation: Review the Code and Run it
 
 ```python
-#Boilerplate stuff:
+# Boilerplate stuff:
 from pyspark import SparkConf, SparkContext
 
 conf = SparkConf().setMaster("local").setAppName("DegreesOfSeparation")
 sc = SparkContext(conf = conf)
 
 # The characters we wish to find the degree of separation between:
-startCharacterID = 5306 #SpiderMan
-targetCharacterID = 14  #ADAM 3,031 (who?)
+startCharacterID = 5306      # SpiderMan
+targetCharacterID = 14       # ADAM 3,031 (who?)
 
 # Our accumulator, used to signal when we find the target character during
 # our BFS traversal.
@@ -246,10 +246,10 @@ def bfsMap(node):
             newEntry = (newCharacterID, ([], newDistance, newColor))
             results.append(newEntry)
 
-        #We've processed this node, so color it black
+        # We've processed this node, so color it black
         color = 'BLACK'
 
-    #Emit the input node so we don't lose it.
+    # Emit the input node so we don't lose it.
     results.append( (characterID, (connections, distance, color)) )
     return results
 
@@ -295,7 +295,7 @@ def bfsReduce(data1, data2):
     return (edges, distance, color)
 
 
-#Main program here:
+# Main program here:
 iterationRdd = createStartingRdd()
 
 for iteration in range(0, 10):
