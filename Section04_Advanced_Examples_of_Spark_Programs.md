@@ -1,90 +1,31 @@
 ## Lecture 34 - [Activity] Find the Most Popular Moviefrom pyspark.sql import SparkSession
-from pyspark.sql import functions as func
-from pyspark.sql.types import StructType, StructField, IntegerType, StringType
-
-spark = SparkSession.builder.appName("MostObscureSuperheroes").getOrCreate()
-
-schema = StructType([ \
-                     StructField("id", IntegerType(), True), \
-                     StructField("name", StringType(), True)])
-
-names = spark.read.schema(schema).option("sep", " ").csv("file:///SparkCourse/Marvel-names.txt")
-
-lines = spark.read.text("file:///SparkCourse/Marvel-graph.txt")
-
-# Small tweak vs. what's shown in the video: we trim whitespace from each line as this
-# could throw the counts off by one.
-connections = lines.withColumn("id", func.split(func.trim(func.col("value")), " ")[0]) \
-    .withColumn("connections", func.size(func.split(func.trim(func.col("value")), " ")) - 1) \
-    .groupBy("id").agg(func.sum("connections").alias("connections"))
-    
-minConnectionCount = connections.agg(func.min("connections")).first()[0]
-
-minConnections = connections.filter(func.col("connections") == minConnectionCount)
-
-minConnectionsWithNames = minConnections.join(names, "id")
-
-print("The following characters have only " + str(minConnectionCount) + " connection(s):")
-
-minConnectionsWithNames.select("name").show()39
-
-
-* Join: Attach movieNames with movieIDs
-* Dictionary loaded in driver program
-* Broadcast the object and retrieve dictionary from it!
-* UDFs
 
 ```python
 from pyspark.sql import SparkSession
 from pyspark.sql import functions as func
 from pyspark.sql.types import StructType, StructField, IntegerType, LongType
-import codecs
-
-def loadMovieNames():
-movieNames = {}
-    # Change this to PATH to your u.item file:
-    with codecs.open("/Users/marshad/Desktop/SparkCourse/data/ml-100k/u.item", "r", encoding='ISO-8859-1', errors='ignore') as f:
-        for line in f:
-            fields = line.split('|')
-            movieNames[int(fields[0])] = fields[1]
-    return movieNames
 
 spark = SparkSession.builder.appName("PopularMovies").getOrCreate()
 
-nameDict = spark.sparkContext.broadcast(loadMovieNames())
-
-# create schema when reading u.data
+# Create schema when reading u.data
 schema = StructType([ \
-                        StructField("userID", IntegerType(), True), \
-                        StructField("movieID", IntegerType(), True), \
-                        StructField("rating", IntegerType(), True), \
-                        StructField("timestampuserID", LongType(), True)
-                    ])
+                     StructField("userID", IntegerType(), True), \
+                     StructField("movieID", IntegerType(), True), \
+                     StructField("rating", IntegerType(), True), \
+                     StructField("timestamp", LongType(), True)])
 
 # Load up movie data as dataframe
-moviesDF = spark.read.option("sep", "\t").schema(schema).csv("/Users/marshad/Desktop/SparkCourse/data/ml-100k/u.data")
+moviesDF = spark.read.option("sep", "\t").schema(schema).csv("file:///SparkCourse/ml-100k/u.data")
 
-movieCounts = moviesDF.groupBy("movieID").count()
-
-# create a user-defined function to look up movie names from our broadcasted dictionary
-def lookupName(movieID):
-    return nameDict.value[movieID]
-
-lookupNameUDF = func.udf(lookupName)
-
-# Add a movieTitle column using our new udf
-moviesWithNames = movieCounts.withColumn("movieTitle", lookupNameUDF(func.col("movieID")))
-
-# Sort the results
-sortedMoviesWithNames = moviesWithNames.orderBy(func.desc("count"))
+# Some SQL-style magic to sort all movies by popularity in one line!
+topMovieIDs = moviesDF.groupBy("movieID").count().orderBy(func.desc("count"))
 
 # Grab the top 10
-sortedMoviesWithNames.show(10, False)
+topMovieIDs.show(10)
 
 # Stop the session
 spark.stop()
 ```
-
 ***
 
 ## Lecture 35 -- [Activity] Use Broadcast Variables to Display Movie Names Instead of ID Numbers
