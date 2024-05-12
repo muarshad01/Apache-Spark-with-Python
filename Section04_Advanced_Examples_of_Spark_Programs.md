@@ -182,6 +182,9 @@ minConnectionsWithNames.select("name").show()
 
 ## Lecture 41 - Superhero Degrees of Separation: Accumulators, and Implementing BFS in Spark
 
+* Line - `(node, connectins, distance, COLOR)`
+    * Our, initial condition is node is `infinitely distant (9999)` and `white`
+    * `(node, connectins, 9999, WHITE)`
 ***
 
 ## Lecture 42 - [Activity] Superhero Degrees of Separation: Review the Code and Run it
