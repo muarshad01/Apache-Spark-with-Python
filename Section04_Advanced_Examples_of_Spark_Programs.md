@@ -63,7 +63,7 @@ schema = StructType([ \
                      StructField("timestamp", LongType(), True)])
 
 # Load up movie data as dataframe
-moviesDF = spark.read.option("sep", "\t").schema(schema).csv("file:///SparkCourse/ml-100k/u.data")
+moviesDF = spark.read.option("sep", "\t").schema(schema).csv('/Users/marshad/Desktop/SparkCourse/data/mk-100k/u.data')
 
 movieCounts = moviesDF.groupBy("movieID").count()
 
