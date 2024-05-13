@@ -234,7 +234,7 @@ def bfsMap(node):
 
     results = []
 
-    #If this node needs to be expanded...
+    # If this node needs to be expanded...
     if (color == 'GRAY'):
         for connection in connections:
             newCharacterID = connection
