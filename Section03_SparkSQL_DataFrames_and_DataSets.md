@@ -9,7 +9,11 @@
    		* Can run `SQL queries`
 		* Read / Write to JSON, Hive, parquet, CSV, ...
 		* Communicate with JDBC / ODBC, Tableau, ...
-* `SparkSession` versus `SparkContext`
+***
+
+* Create `SparkSession` object instead of a `SparkContext` when using Spark SQL / DataSets
+	* You can get a `SparkContext` from this session, and use to issue SQL queries on your DataSets
+	* Stop the sesssion once you're done
 
 ***
 
