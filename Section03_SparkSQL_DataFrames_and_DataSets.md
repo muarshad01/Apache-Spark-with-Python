@@ -9,6 +9,13 @@
    		* Can run `SQL queries`
 		* Read / Write to JSON, Hive, parquet, CSV, ...
 		* Communicate with JDBC / ODBC, Tableau, ...
+  	* `DataFrame` is just a DataSet of Row objects (DataSet[Row])
+  	* DataSets can explicity wrap a given struct or type (DataSet[Person], DataSet[(String, Double)])
+  		* It knows whats its colums are from the get-go
+  	 * `DataFrames` schema is inferred at runtime; but a DataSet can be inferred at compile time
+  	 	* Faster detection of errors, and better optimization
+  	  	* DataSets can only be used in compiled languages (Java, Scala - sorry Python)
+  	   * RDDs can be converted to DataSets with `.toDS()`
 ***
 
 * Create `SparkSession` object instead of a `SparkContext` when using Spark SQL / DataSets
