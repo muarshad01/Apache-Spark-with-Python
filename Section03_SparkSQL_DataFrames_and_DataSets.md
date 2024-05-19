@@ -14,7 +14,7 @@
   		* It knows whats its colums are from the get-go
   	 * `DataFrames` schema is inferred at runtime; but a `DataSet` can be inferred at compile time
   	 	* Faster detection of errors, and better optimization
-  	  	* DataSets can only be used in compiled languages (Java, Scala - sorry Python)
+  	  	* `DataSets` can only be used in compiled languages (Java, Scala - sorry Python)
   	   * RDDs can be converted to DataSets with `.toDS()`
 ***
 
