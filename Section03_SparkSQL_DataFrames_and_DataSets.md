@@ -3,7 +3,7 @@
 * `SparkSQL`
 	* Extends RDDs to `DataFrmae` object
  		* DataFrames have more automatic optimization than with RDD's 
-	* `DataFrames` insted of `RDDs`:
+	* `DataFrames`:
 		* Cotain `Row` objets
 		* Can have a `Schema` leading to more efficient storage
    		* Can run `SQL queries`
