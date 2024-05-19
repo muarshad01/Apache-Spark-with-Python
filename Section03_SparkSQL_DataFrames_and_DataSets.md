@@ -1,10 +1,12 @@
 ## Lecture 25 - Introducing SparkSQL
 
 * `SparkSQL`
+	* Extends RDDs to `DataFrmae` object
+ 		* DataFrames have more automatic optimization than with RDD's 
 	* `DataFrames` insted of `RDDs`:
-		* `DataSet(Set)` of `Row` objets
-		* Can have a `Schema`
-   		* Allow running `SQL queries`
+		* Cotain `Row` objets
+		* Can have a `Schema` leading to more efficient storage
+   		* Can run `SQL queries`
 		* Read / Write to JSON, Hive, parquet, CSV, ...
 		* Communicate with JDBC / ODBC, Tableau, ...
 * `SparkSession` versus `SparkContext`
